@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SunSet</title>
     <link href="css/style2.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+
 
 </head>
 <body>
@@ -39,21 +42,19 @@
         <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="cartModalLabel">Корзина</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h5 class="basket-title" id="cartModalLabel">Корзина</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="btn-close"></button>
             </div>
             <div class="modal-body">
             <ul id="cart-items" class="list-group"></ul>
             </div>
             <div class="modal-footer">
             <p>Итого: <span id="total-price">0</span> руб.</p>
-            <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button> -->
             </div>
             <div class="modal-footers text-center">
             <span id="total-price"></span>
             <a href="#" class="btn btn-success">Перейти к оплате</a>
         </div>
-        
         </div>
         </div>
     </div>
@@ -69,21 +70,26 @@
 
         <!-- Секция серверов -->
         <section class="servers-section" id="servers">
-        <h2 class="section-title">Добро пожаловать</h2>
-        <div class="servers-grid">
-            <button onclick="copyIP('bedrock')" class="server-btn">
+        <h2 class="section-title">Добро пожаловать!</h2>
+        <button onclick="copyIP('bedrock', this)" class="server-btn"> <!-- Добавляем this как второй аргумент -->
             <span class="ip-text">Bedrock IP</span>
             <span class="copied-notification">IP скопирован</span>
-            </button>
-            
-            <button onclick="copyIP('java')" class="server-btn">
+        </button>
+        
+        <button onclick="copyIP('java', this)" class="server-btn"> <!-- аналогично -->
             <span class="ip-text">Java IP</span>
             <span class="copied-notification">IP скопирован</span>
-            </button>
-        </div>
-        </section>
+        </button>
+        
 
 <!-- маркет -->
+    <h2 class="market-title">Магазин привелегий</h2>
+        <div class="modalinfo">
+            <div class="container-info">
+                <h3 class="title-info"></h3>
+                <div class="text-info"></div>
+            </div>
+        </div>
 <!-- Раздел с карточками товаров -->
 <section class="section section-md pt-0" style="margin-top: -2rem">
     <div class="container text-white">
@@ -96,13 +102,33 @@
                             <img src="img/товары/все команды.png" class="img-fluid" alt="Все команды">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>Все команды</h6>
+                            <h6>
+                                Все команды
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-1')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>599 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="1" data-name="Все команды" data-price="599">В корзину</button>
+                            
                         </div>
                     </div>
+                </div>
+                <div id="desc-1" style="display:none;">
+                    <ul class="command-list">
+                        <h4>ВСЕ КОМАНДЫ</h4>
+                        <br> /hat – надеть блок на голову
+                        <br>/ptime – персональное время суток
+                        <br>/feed – пополнение сытости (раз в 5 минут)
+                        <br> /dback – телепорт на место смерти
+                        <br> /ender (/ec) – доступ к эндер-сундуку
+                        <br> /workbench (/wb) – верстак в любой точке мира
+                        <br> /anvil – вызов наковальни
+                        <br> /heal – лечение (раз в час)
+                        <br> /repair all – починка всей брони и предметов (раз в час)
+                        <br> /back – телепорт на последнее место
+                        <br> /armorstand — редактор стоек для брони
+                    </ul>
                 </div>
                 <!-- Карточка товара 2 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -111,13 +137,31 @@
                         <img src="img/товары/п+ на мес.png" class="img-fluid" alt="Player+ на месяц">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>Player+ на месяц</h6>
+                            <h6>Player+ на месяц
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-2')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>80 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="2" data-name="Player+ на месяц" data-price="80">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-2" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>Player+ на месяц</h4>
+                        <br>  Префикс [P+] в чате
+                        <br>/ Установка точек дома: 5 (!) не суммируются с доп. покупкой
+                        <br>/ Доступных регионов: 4 (!) не суммируются с доп. покупкой
+                        <br>  Размер региона (в блоках): 500 000
+                        <br>  Возможность выставить 10 предметов на аукционе (!) не суммируются с доп. покупкой
+                        <br> 
+                        <br>  Команды:
+                        <br> /hat — надеть предмет на голову
+                        <br> /ptime – персональное время суток
+                        <br> 
+                        <br> Срок действия привилегии: 30 дней
+                    </ul>
                 </div>
                 <!-- Карточка товара 3 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -126,13 +170,31 @@
                             <img src="img/товары/п+.png" class="img-fluid" alt="Player+">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>Player+</h6>
+                            <h6>Player+
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-3')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>200 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="3" data-name="Player+" data-price="200">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-3" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>Player+</h4>
+                        <br> Префикс [P+] в чате
+                        <br> Установка точек дома: 5 (!) не суммируются с доп. покупкой
+                        <br> Доступных регионов: 4 (!) не суммируются с доп. покупкой
+                        <br> Размер региона (в блоках): 500 000
+                        <br> Возможность выставить 10 предметов на аукционе (!) не суммируются с доп. покупкой
+                        <br>
+                        <br> Команды:
+                        <br>/hat — надеть предмет на голову
+                        <br>/ptime – персональное время суток
+                        <br>
+                        <br>Срок действия привилегии: навсегда
+                    </ul>
                 </div>
                 <!-- Карточка товара 4 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -141,13 +203,35 @@
                             <img src="img/товары/вип мес.png" class="img-fluid" alt="Все команды">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>VIP на месяц</h6>
+                            <h6>VIP на месяц
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-4')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>150 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="4" data-name="вип мес" data-price="150">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-4" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>Vip на месяц</h4>
+                        <br>Префикс [VIP] в чате
+                        <br>Установка точек дома: 15 (!) не суммируются с доп. покупкой
+                        <br>Доступных регионов: 7 (!) не суммируются с доп. покупкой
+                        <br>Размер региона (в блоках): 500 000
+                        <br>Возможность выставить 25 предметов на аукционе (!) не суммируются с доп. покупкой
+                        <br>
+                        <br>Команды:
+                        <br>/feed — пополнение сытости (раз в 10 минут)
+                        <br>/dback — телепорт на место смерти
+                        <br>/workbench или /wb — верстак в любой точке мира
+                        <br>/anvil — вызов наковальни
+                        <br>Все преимущества P+
+                        <br>
+                        <br>Срок действия привилегии: 30 дней
+
+                    </ul>
                 </div>
                 <!-- Карточка товара 5 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -156,13 +240,34 @@
                             <img src="img/товары/вип.png" class="img-fluid" alt="VIP">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>VIP</h6>
+                            <h6>VIP
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-5')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>500 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="5" data-name="VIP" data-price="500">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-5" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>Vip</h4>
+                        <br>Префикс [VIP] в чате
+                        <br>Установка точек дома: 15 (!) не суммируются с доп. покупкой
+                        <br>Доступных регионов: 7 (!) не суммируются с доп. покупкой
+                        <br>Размер региона (в блоках): 500 000
+                        <br>Возможность выставить 25 предметов на аукционе (!) не суммируются с доп. покупкой
+                        <br>
+                        <br>Команды:
+                        <br>/feed — пополнение сытости (раз в 10 минут)
+                        <br>/dback — телепорт на место смерти
+                        <br>/workbench или /wb — верстак в любой точке мира
+                        <br>/anvil — вызов наковальни
+                        <br>Все преимущества P+
+                        <br>
+                        <br>Срок действия привилегии: навсегда
+                    </ul>
                 </div>
                 <!-- Карточка товара 6 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -171,13 +276,35 @@
                             <img src="img/товары/вип+ мес.png" class="img-fluid" alt="VIP+ на месяц">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>VIP+ на месяц</h6>
+                            <h6>VIP+ на месяц
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-6')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>300 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="6" data-name="VIP+ на месяц" data-price="300">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-6" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>Vip+ на месяц</h4>
+                        <br>Префикс [VIP+] в чате
+                        <br>Установка точек дома: 20 (!) не суммируются с доп. покупкой
+                        <br>Доступных регионов: 5 (!) не суммируются с доп. покупкой
+                        <br>Размер региона (в блоках): 1 000 000
+                        <br>Возможность выставить 42 предмета на аукционе (!) не суммируются с доп. покупкой
+                        <br>
+                        <br>  Команды:
+                        <br>/repair all — починка предметов (раз в 30 минут)
+                        <br>/armorstand — редактор стоек для брони
+                        <br>/back - телепорт на последнее место
+                        <br>/ender или /ec — доступ к эндер-сундуку
+                        <br>Сохранение инвентаря после смерти
+                        <br>Все преимущества VIP
+                        <br>
+                        <br>  Срок действия привилегии: 30 дней
+                    </ul>
                 </div>
                 <!-- Карточка товара 7 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -186,13 +313,34 @@
                             <img src="img/товары/вип +.png" class="img-fluid" alt="Vip+">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>VIP+</h6>
+                            <h6>VIP+
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-7')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>1200 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="7" data-name="Vip+" data-price="1200">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-7" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>Vip+</h4>
+                        <br>Префикс [VIP+] в чате
+                        <br>Установка точек дома: 20 (!) не суммируются с доп. покупкой
+                        <br>Доступных регионов: 5 (!) не суммируются с доп. покупкой
+                        <br>Размер региона (в блоках): 1 000 000
+                        <br>Возможность выставить 42 предмета на аукционе (!) не суммируются с доп. покупкой
+                        <br>
+                        <br>Команды:
+                        <br>/fixall — починка предметов (раз в 30 минут)
+                        <br>/back - телепорт на последнее место
+                        <br>/ender или /ec — доступ к эндер-сундуку
+                        <br>Сохранение инвентаря после смерти
+                        <br>Все преимущества VIP
+                        <br>
+                        <br>Срок действия привилегии: навсегда
+                    </ul>
                 </div>
                 <!-- Карточка товара 8 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -201,13 +349,33 @@
                             <img src="img/товары/спонсор на мес.png" class="img-fluid" alt="Sponsor на месяц">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>Sponsor на месяц</h6>
+                            <h6>Sponsor на мес.
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-8')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>500 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="8" data-name="Sponsor на месяц" data-price="500">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-8" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>Sponsor на месяц</h4>
+                        <br> Префикс [SR] в чате
+                        <br> Установка точек дома: 50 (!) не суммируются с доп. покупкой
+                        <br> Доступных регионов: 10 (!) не суммируются с доп. покупкой
+                        <br> Размер региона (в блоках): 1 000 000
+                        <br> Возможность выставить 60 предметов на аукционе (!) не суммируются с доп. покупкой
+                        <br>
+                        <br> Команды:
+                        <br>/heal — вылечить себя (раз в 30 минут)
+                        <br>/armorstand — редактор стоек для брони
+                        <br>Сохранение инвентаря и опыта после смерти
+                        <br> Все преимущества VIP+
+                        <br>
+                        <br>Срок действия привилегии: 30 дней
+                    </ul>
                 </div>
                 <!-- Карточка товара 9 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -216,13 +384,33 @@
                             <img src="img/товары/спонсор.png" class="img-fluid" alt="Sponsor">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>Sponsor</h6>
+                            <h6>Sponsor
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-9')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>2000 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="9" data-name="Sponsor" data-price="2000">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-9" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>Sponsor</h4>
+                        <br> Префикс [SR] в чате
+                        <br> Установка точек дома: 50 (!) не суммируются с доп. покупкой
+                        <br> Доступных регионов: 10 (!) не суммируются с доп. покупкой
+                        <br> Размер региона (в блоках): 1 000 000
+                        <br> Возможность выставить 60 предметов на аукционе (!) не суммируются с доп. покупкой
+                        <br>
+                        <br> Команды:
+                        <br>/heal — вылечить себя (раз в 30 минут)
+                        <br>/armorstand — редактор стоек для брони
+                        <br>Сохранение инвентаря и опыта после смерти
+                        <br> Все преимущества VIP+
+                        <br>
+                        <br>Срок действия привилегии: навсегда
+                    </ul>
                 </div>
                 <!-- Карточка товара 10 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -231,13 +419,21 @@
                             <img src="img/товары/бустрер прогр 30мин.png" class="img-fluid" alt="Бустер прогресса на 30 минут">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>Бустер на 30 минут</h6>
+                            <h6>Бустер 30 мин
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-10')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>99 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="10" data-name="Бустер прогресса на 30 минут" data-price="99">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-10" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>Бустер прогресса на 30 минут</h4>
+                        <br>Активируйте серверный бустер и ускорьте прогресс на +10%! Все игроки на сервере получат дополнительный бонус к Прогрессу на 30 минут   
+                    </ul>
                 </div>
                 <!-- Карточка товара 11 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -246,13 +442,22 @@
                             <img src="img/товары/бустрер прогр час.png" class="img-fluid" alt="Бустер прогресса на 1 час">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>Бустер прогресса час</h6>
+                            <h6>Бустер прогр. 1ч
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-11')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>179 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="11" data-name="Бустер прогресса на 1 час" data-price="179">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-11" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>Бустер прогресса на 1 час</h4>
+                        <br>
+                        Активируйте серверный бустер и ускорьте прогресс на +10%! Все игроки на сервере получат дополнительный бонус к Прогрессу на 1 час
+                    </ul>
                 </div>
                 <!-- Карточка товара 12 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -261,13 +466,21 @@
                             <img src="img/товары/деньги 10 30 мин.png" class="img-fluid" alt="Бустер денег 30 мин">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>Бустер денег 30 мин</h6>
+                            <h6>Бустер $ 30 мин
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-12')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>99 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="12" data-name="Бустер денег 30 мин" data-price="99">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-12" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>Бустер денег 30 мин</h4>
+                        <br>Активируйте серверный бустер и получайте на 10% больше денег за уровни! Все игроки на сервере смогут увеличить свой заработок на 30 минут
+                    </ul>
                 </div>
                 <!-- Карточка товара 13 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -276,13 +489,21 @@
                             <img src="img/товары/деньги 10 час.png" class="img-fluid" alt="Бустер денег на 1 час">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>Бустер денег на 1 час</h6>
+                            <h6>Бустер $ 1 час
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-13')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>179 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="13" data-name="Бустер денег на 1 час" data-price="179">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-13" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>Бустер денег на 1 час</h4>
+                        <br>Активируйте серверный бустер и получайте на 10% больше денег за уровни! Все игроки на сервере смогут увеличить свой заработок на 1 час
+                    </ul>
                 </div>
                 <!-- Карточка товара 14 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -291,13 +512,21 @@
                             <img src="img/товары/Команда repair all.png" class="img-fluid" alt="Команда /repair all">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>Команда /repair all</h6>
+                            <h6>/repair all
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-14')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>109 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="14" data-name="Команда /repair all" data-price="109">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-14" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>Команда /repair all</h4>
+                        <br>Позволяет чинить любые предметы раз в 30 минут
+                    </ul>
                 </div>
                 <!-- Карточка товара 15 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -306,13 +535,21 @@
                             <img src="img/товары/ender.png" class="img-fluid" alt="Команда /ender">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>Команда /ender</h6>
+                            <h6>/ender
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-15')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>99 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="15" data-name="Команда /ender" data-price="99">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-15" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>Команда /ender</h4>
+                        <br>Возможность открывать эндер-сундук с помощью команд /ec или /ender в любой точке мира
+                    </ul>
                 </div>
                 <!-- Карточка товара 16 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -321,13 +558,21 @@
                             <img src="img/товары/ptime.png" class="img-fluid" alt="Команда /ptime">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>Команда /ptime</h6>
-                            <h5>80 ₽.</h5>
+                            <h6>/ptime
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-16')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
+                            <h5>80 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="16" data-name="Команда /ptime" data-price="49">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-16" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>Команда /ptime</h4>
+                        <br>Возможность установить время суток лично для себя /ptime
+                    </ul>
                 </div>
                 <!-- Карточка товара 17 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -336,13 +581,21 @@
                             <img src="img/товары/back.png" class="img-fluid" alt="back">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>Команда /back</h6>
+                            <h6>/back
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-17')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>299 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="17" data-name="Команда /back" data-price="299">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-17" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>Команда /back</h4>
+                        <br>Позволяет вернуться на предыдущее место
+                    </ul>
                 </div>
                 <!-- Карточка товара 18 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -351,13 +604,27 @@
                             <img src="img/товары/функционал блоки.png" class="img-fluid" alt="Функциональные блоки">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>Функциональные блоки</h6>
+                            <h6>функц. блоки
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-18')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>99 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="18" data-name="Функциональные блоки" data-price="99">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-18" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>Функциональные блоки</h4>
+                        <br>Позволяет открыть верстак, наковальню, стол кузнеца и тд. в любой точке мира
+                        <br>Открыть верстак - /workbench
+                        <br>Открыть наковальню - /anvil
+                        <br>Открыть стол картографа - /cartographytable
+                        <br>Открыть камнерез - /stonecutter
+                        <br>Открыть точило - /grindstone
+                        <br>Открыть стол кузнеца - /smithingtable
+                    </ul>
                 </div>
                 <!-- Карточка товара 19 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -366,13 +633,21 @@
                             <img src="img/товары/инвентарь.png" class="img-fluid" alt="Сохранение инвентаря">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>Сохранение инвентаря</h6>
+                            <h6>Keepinventory
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-19')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>349 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
-                            <button class="btn btn-primary add-to-cart" data-id="19" data-name="Сохранение инвентаря" data-price="349">В корзину</button>
+                            <button class="btn btn-primary add-to-cart" data-id="19" data-name="Keepinventory" data-price="349">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-19" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>сохранение инвентаря</h4>
+                        <br> Сохраняет инвентарь игрока после смерти
+                    </ul>
                 </div>
                 <!-- Карточка товара 20 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -381,13 +656,21 @@
                             <img src="img/товары/5 домов.png" class="img-fluid" alt="5 точек дома">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>5 точек дома</h6>
+                            <h6>5 точек дома
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-20')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>49 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="20" data-name="5 точек дома" data-price="49">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-20" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>5 точек дома</h4>
+                        <br>Возмость установить 5 точек дома
+                    </ul>
                 </div>
                 <!-- Карточка товара 21 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -396,13 +679,21 @@
                             <img src="img/товары/20 домов.png" class="img-fluid" alt="20 точек дома">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>20 точек дома</h6>
+                            <h6>20 точек дома
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-21')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>179 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="21" data-name="20 точек дома" data-price="179">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-21" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>20 точек дома</h4>
+                        <br>Возмость установить 20 точек дома
+                    </ul>
                 </div>
                 <!-- Карточка товара 22 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -411,13 +702,20 @@
                             <img src="img/товары/50 домов.png" class="img-fluid" alt="50 точек дома">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>50 точек дома</h6>
+                            <h6>50 точек дома
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-22')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>299 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="22" data-name="50 точек дома" data-price="299">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-22" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>50 точек дома</h4>
+                        <br> Возможность установить 50 точек дома
                 </div>
                 <!-- Карточка товара 23 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -426,13 +724,21 @@
                             <img src="img/товары/100 домов.png" class="img-fluid" alt="100 точек дома">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>100 точек дома</h6>
+                            <h6>100 точек дома
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-23')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>449 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="23" data-name="100 точек дома" data-price="449">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-23" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>100 точек дома</h4>
+                        <br> Возможность установить 100 точек дома
+                    </ul>
                 </div>
                 <!-- Карточка товара 24 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -441,13 +747,22 @@
                             <img src="img/товары/10 магазинов.png" class="img-fluid" alt="10 магазинов">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>10 магазинов</h6>
+                            <h6>10 магазинов
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-24')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>49 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="24" data-name="10 магазинов" data-price="49">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-24" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>10 магазинов</h4>
+                        <br> Возможность создать 10 сундуков-магазинов
+                        <br>(!) не суммируются с доп. покупкой
+                    </ul>
                 </div>
                 <!-- Карточка товара 25 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -456,13 +771,21 @@
                             <img src="img/товары/20 магазинов.png" class="img-fluid" alt="20 магазинов">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>20 магазинов</h6>
+                            <h6>20 магазинов
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-25')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>69 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="25" data-name="20 магазинов" data-price="69">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-25" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>20 сундуков-магазинов</h4>
+                        <br> Возможность создать 20 сундуков-магазинов
+                        <br>(!) не суммируются с доп. покупкой
                 </div>
                 <!-- Карточка товара 26 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -471,13 +794,22 @@
                             <img src="img/товары/50 магазинов.png" class="img-fluid" alt="50 магазинов">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>50 магазинов</h6>
+                            <h6>50 магазинов
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-26')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>99 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="26" data-name="50 магазинов" data-price="99">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-26" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>50 сундуков-магазинов</h4>
+                        <br> Возможность создать 50 сундуков-магазинов
+                        <br>(!) не суммируются с доп. покупкой
+                    </ul>
                 </div>
                 <!-- Карточка товара 27 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -486,13 +818,22 @@
                             <img src="img/товары/100 магазинов.png" class="img-fluid" alt="100 магазинов">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>100 магазинов</h6>
+                            <h6>100 магазинов
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-27')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>179 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="27" data-name="100 магазинов" data-price="179">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-27" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>100 магазинов</h4>
+                        <br> Возможность создать 100 сундуков-магазинов
+                        <br>(!) не суммируются с доп. покупкой
+                    </ul>
                 </div>
                 <!-- Карточка товара 28 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -501,13 +842,22 @@
                             <img src="img/товары/5 приватов.png" class="img-fluid" alt="5 приватов">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>5 приватов</h6>
+                            <h6>5 приватов
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-28')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>99 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="28" data-name="5 приватов" data-price="99">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-28" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>5 приватов</h4>
+                        <br>Возможность создавать до 5 регионов по 500 тысяч блоков каждый
+                        <br>(!) не суммируются с доп. покупкой
+                    </ul>
                 </div>
                 <!-- Карточка товара 29 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -516,13 +866,22 @@
                             <img src="img/товары/10 приватов.png" class="img-fluid" alt="10 приватов">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>10 приватов</h6>
+                            <h6>10 приватов
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-29')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>149 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="29" data-name="10 приватов" data-price="149">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-29" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>10 приватов</h4>
+                        <br>Возможность создавать до 10 регионов по 500 тысяч блоков каждый
+                        <br>(!) не суммируются с доп. покупкой
+                    </ul>
                 </div>
                 <!-- Карточка товара 30 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -531,13 +890,22 @@
                             <img src="img/товары/20 приватов.png" class="img-fluid" alt="20 приватов">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>20 приватов</h6>
+                            <h6>20 приватов
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-30')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>219 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="30" data-name="20 приватов" data-price="219">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-30" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>20 приватов</h4>
+                        <br>Возможность создавать до 20 регионов по 500 тысяч блоков каждый
+                        <br>(!) не суммируются с доп. покупкой
+                    </ul>
                 </div>
                 <!-- Карточка товара 31 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -546,13 +914,22 @@
                             <img src="img/товары/5 голд приватов.png" class="img-fluid" alt="5 приватов (1млн)">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>5 приватов (1млн)</h6>
+                            <h6>5 приватов
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-31')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>189 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="31" data-name="5 приватов (1млн)" data-price="189">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-31" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>5 приватов (1млн)</h4>
+                        <br>Возможность создавать до 5 регионов по 1млн. блоков каждый
+                        <br>(!) не суммируются с доп. покупкой
+                    </ul>
                 </div>
                 <!-- Карточка товара 32 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -561,13 +938,22 @@
                             <img src="img/товары/10 приватов по ляму.png" class="img-fluid" alt="10 приватов (1млн)">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>10 приватов (1млн)</h6>
+                            <h6>10 приватов
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-32')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>269 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="32" data-name="10 приватов (1млн)" data-price="269">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-32" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>10 приватов (1лн)</h4>
+                        <br>Возможность создавать до 10 регионов по 1млн. блоков каждый
+                        <br>(!) не суммируются с доп. покупкой
+                    </ul>
                 </div>
                 <!-- Карточка товара 33 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -576,13 +962,21 @@
                             <img src="img/товары/20 приватов по ляму.png" class="img-fluid" alt="20 приватов (1лн)">
                         </div>
                         <div class="card-body pt-0 text-black font-weight-bold">
-                            <h6>20 приватов (1млн)</h6>
+                            <h6>20 приватов
+                                <button class="btn-info btn-link p-0" onclick="showProductInfo('desc-33')"> <img class="img-info" src="img/info 1.svg" alt="Информация"></button>
+                            </h6>
                             <h5>379 ₽</h5>
                         </div>
                         <div class="card-footer pb-0 position-relative">
                             <button class="btn btn-primary add-to-cart" data-id="33" data-name="20 приватов (1лн)" data-price="379">В корзину</button>
                         </div>
                     </div>
+                </div>
+                <div id="desc-33" style="display:none;">
+                    <ul class="command-list">
+                        <h4 class='comand-list-h4'>20 приватов (1млн)</h4>
+                        <br>Возможность создавать до 20 регионов по 1млн. блоков каждый
+                        <br>(!) не суммируются с доп. покупкой
                 </div>
                 <!-- Повторить для других товаров -->
             </div>
@@ -598,7 +992,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <h2 class="h2 font-weight-bolder">Инструкция по покупке</h2>
-                                                    <p class="font-weight-bolder mb-0">1. Выбор товара</p>
+                        <p class="font-weight-bolder mb-0">1. Выбор товара</p>
                 <p class="mt-0">Добавьте необходимые товары в корзину и заполните предлагаемую форму.</p>
 
                 <p class="font-weight-bolder mb-0">2. Оплата товара</p>
@@ -636,25 +1030,41 @@
         </footer>
     </div>
     </div>
+    <div class="modal fade" id="productModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-white">
+                <div class="modal-title">
+                    <h5 class="modal-title" id="desc-1"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="btn-close"></button>
+                </div>
+                <div class="modal-body" id="modalContent">
+                    Текст описания...
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>  
+
 
     <script>
-    function copyIP(type) {
-        const text = type === 'bedrock' 
-        ? 'play.sunsetmc.online' 
-        : 'play.sunsetmc.online | Порт: 2209';
+        function copyIP(type, buttonElement) { // Добавляем второй аргумент (ссылка на кнопку)
+            const text = type === 'bedrock' 
+            ? 'play.sunsetmc.online' 
+            : 'play.sunsetmc.online | Порт: 2209';
+            
+            navigator.clipboard.writeText(text).then(() => {
+                // Ищем уведомление ВНУТРИ конкретной кнопки
+                const notification = buttonElement.querySelector('.copied-notification');
+                notification.classList.add('visible');
+                setTimeout(() => notification.classList.remove('visible'), 1000);
+            });
+        }
+        </script>
         
-        navigator.clipboard.writeText(text).then(() => {
-        const notifications = document.querySelectorAll('.copied-notification');
-        notifications.forEach(notification => {
-            notification.classList.add('visible');
-            setTimeout(() => notification.classList.remove('visible'), 1000);
-        });
-        });
-    }
-    </script>
 
-<script
-src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>  
 <script>
     document.addEventListener('DOMContentLoaded', () => {
     const cartItems = [];
@@ -699,7 +1109,42 @@ src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.j
     };
     });
 </script>
+
+
+
+
+<script>
+    function showMoreInfo(id) {
+    fetch(`/get-product-info/${id}`)
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('product-name').textContent = data.name;
+            document.getElementById('product-description').textContent = data.description;
+            document.getElementById('productInfoModal').style.display = 'block';
+        });
+}
+</script>
+
+<!-- info -->
+<script>
+    function showProductInfo(contentId) {
+    const contentBlock = document.getElementById(contentId);
+    const modalContent = document.getElementById('modalContent');
+  // Клонируем контент для Shadow DOM
+    const shadowContent = contentBlock.cloneNode(true);
+    shadowContent.style.display = 'block';
+  // Очищаем предыдущий контент и внедряем
+    modalContent.innerHTML = '';
+    modalContent.appendChild(shadowContent);
+
+    // document.getElementById('modalTitle').textContent = 
+    // shadowContent.querySelector('h4').textContent;
+
+    new bootstrap.Modal(document.getElementById('productModal')).show();
+}
+</script>
+
+
+
 </body>
 </html>
-
-

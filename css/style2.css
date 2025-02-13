@@ -379,4 +379,8 @@ h6 {
     grid-template-columns: 1fr;
 
   }
+
+  .modal-title {
+    margin-left: 90%;
+  }
 }

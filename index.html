@@ -55,6 +55,11 @@
                 <button class="btn-basket"><a href="#" type="submit" class="btn-basket" data-bs-toggle="modal" data-bs-target="#paymentModal">Перейти к оплате</a>
                 </button>    
                 </div>
+                <div class="test-buttons">
+                    <button onclick="window.location.href='?payment=success&order_id=TEST-123'" class="btn btn-success">Тест успеха</button>
+                    <button onclick="window.location.href='?payment=error&reason=test'" class="btn btn-danger">Тест ошибки</button>
+                    <button onclick="window.location.href='?payment=processing'" class="btn btn-warning">Тест обработки</button>
+                </div>    
         </div>
     </div>
 </div>
@@ -74,17 +79,14 @@
                 target="_blank"> <!-- Открыть в новой вкладке -->
             
             <!-- Обязательные поля для SCI -->
-            <input type="hidden" name="merchant_id" value="YOUR_MERCHANT_ID">
-            <input type="hidden" name="amount" id="sciAmount">
-            <input type="hidden" name="currency" value="RUB">
-            <input type="hidden" name="order_id" id="sciOrderId">
-            
-            <!-- URL для перенаправлений -->
             <input type="hidden" name="success_url" 
-                value="https://shop.sunsetmc.online/payment-success.html">
-            <input type="hidden" name="fail_url" 
-                value="https://shop.sunsetmc.online/payment-fail.html">
+            value="https://shop.sunsetmc.online/index2.html?payment=success&order_id=${order_id}">
+        <input type="hidden" name="fail_url" 
+            value="https://shop.sunsetmc.online/index2.html?payment=error&reason=payment_failed">
+        <input type="hidden" name="pending_url" 
+            value="https://shop.sunsetmc.online/index2.html?payment=processing">
             
+
             <!-- Пользовательские поля -->
             <div class="mb-3">
                 <label for="nickname" class="form-label">Никнейм</label>
@@ -103,61 +105,8 @@
             <br>
             <a class="doki" href="img/ПК.pdf">Политикой конфиденциальности</a>
         </form>
-        <!-- Добавляем блоки состояний оплаты -->
-<div class="payment-states">
-    <!-- Состояние 1: Форма оплаты (по умолчанию видима) -->
-    <div id="paymentFormState" class="payment-state active">
-        <!-- Ваша существующая форма оплаты -->
-    </div>
-
-    <!-- Состояние 2: Успешная оплата (скрыто) -->
-    <div id="successState" class="payment-state" style="display: none;">
-        <div class="text-center py-5">
-            <div class="success-icon mb-3">✓</div>
-            <h3 class="mb-3">Оплата прошла успешно!</h3>
-            <p>Номер заказа: <span id="successOrderId"></span></p>
-            <button class="btn-success" onclick="resetPaymentStates()">Вернуться в магазин</button>
-        </div>
-    </div>
-
-    <!-- Состояние 3: Ошибка оплаты (скрыто) -->
-    <div id="errorState" class="payment-state" style="display: none;">
-        <div class="text-center py-5">
-            <div class="error-icon mb-3">✕</div>
-            <h3 class="mb-3">Ошибка оплаты</h3>
-            <p>Причина: <span id="errorReason"></span></p>
-            <button class="btn-danger" onclick="resetPaymentStates()">Попробовать снова</button>
-        </div>
-    </div>
-</div>
-<!-- Временные кнопки для тестирования -->
-    <div class="test-buttons" style="position: fixed; bottom: 20px; right: 20px;">
-        <button onclick="window.location.href='?status=success'" class="btn btn-success">Тест успеха</button>
-        <button onclick="window.location.href='?status=fail'" class="btn btn-danger">Тест ошибки</button>
-    </div>
 <script>
-// Обработчик загрузки страницы
-document.addEventListener('DOMContentLoaded', function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const status = urlParams.get('status');
-    
-    // Сохраняем корзину в localStorage перед переходом на оплату
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    localStorage.setItem('pendingCart', JSON.stringify(cart));
 
-    // Обработка статусов
-    switch(status) {
-        case 'success':
-            showSuccessState();
-            break;
-        case 'fail':
-            showErrorState('Платеж не прошел');
-            break;
-        case 'pending':
-            showPendingState();
-            break;
-    }
-});
 
 // Функции управления состояниями
 function showSuccessState() {
@@ -1313,5 +1262,175 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('sciOrderId').value = `ORDER-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
 });
 </script>
+<!-- В самом низу body, после всех элементов, добавить 3 отдельных модальных окна -->
+<div class="modal fade" id="paymentProcessingModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body text-center py-5">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Загрузка...</span>
+                </div>
+                <h4 class="mt-3">Обработка платежа</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="paymentSuccessModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body text-center py-5">
+                <div class="success-icon mb-3">✓</div>
+                <h3 class="mb-3">Оплата прошла успешно!</h3>
+                <p>Номер заказа: <span id="successOrderId"></span></p>
+                <button class="btn btn-success" data-bs-dismiss="modal">Вернуться в магазин</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно ошибки (исправленный вариант) -->
+<div class="modal fade" id="paymentErrorModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog"> <!-- Исправлено с modal-dismiss на modal-dialog -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="basket-title">Ошибка оплаты</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body text-center py-5">
+                <div class="error-icon mb-3" style="font-size: 3rem; color: #dc3545;">✕</div>
+                <h3 class="mb-3">Оплата не прошла</h3>
+                <p>Причина: <span id="errorReason" class="fw-bold">Неизвестная ошибка</span></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const paymentStatus = urlParams.get('payment');
+
+    // Обработка статусов оплаты
+    switch(paymentStatus) {
+        case 'success':
+            handlePaymentSuccess();
+            break;
+        case 'error':
+            handlePaymentError();
+            break;
+        case 'processing':
+            handlePaymentProcessing();
+            break;
+    }
+});
+
+function handlePaymentError() {
+    const modal = new bootstrap.Modal('#paymentErrorModal');
+    const reason = new URLSearchParams(window.location.search).get('reason');
+    
+    // Устанавливаем текст ошибки
+    document.getElementById('errorReason').textContent = reason || 'Неизвестная ошибка';
+    
+    // Восстанавливаем корзину
+    const pendingCart = localStorage.getItem('pendingCart');
+    if(pendingCart) {
+        localStorage.setItem('cart', pendingCart);
+        updateCartDisplay(); // Функция для обновления отображения корзины
+    }
+    
+    // Показываем модалку
+    modal.show();
+}
+
+// Тестовая кнопка для ошибки (должна работать)
+<div class="test-buttons mt-3">
+    <button onclick="window.location.href='?payment=error&reason=test_reason'" 
+            class="btn btn-danger">
+        Тест ошибки
+    </button>
+</div>
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const paymentStatus = urlParams.get('payment');
+
+    // Сохраняем корзину перед переходом на оплату
+    if(paymentStatus) {
+        const pendingCart = localStorage.getItem('cart');
+        if(pendingCart) localStorage.setItem('pendingCart', pendingCart);
+    }
+
+    // Обработка статусов оплаты
+    switch(paymentStatus) {
+        case 'processing':
+            new bootstrap.Modal('#paymentProcessingModal').show();
+            break;
+        case 'success':
+            handlePaymentSuccess();
+            break;
+        case 'error':
+            handlePaymentError();
+            break;
+    }
+});
+
+function handlePaymentSuccess() {
+    const modal = new bootstrap.Modal('#paymentSuccessModal');
+    const orderId = new URLSearchParams(window.location.search).get('order_id');
+    
+    document.getElementById('successOrderId').textContent = orderId;
+    localStorage.removeItem('cart');
+    modal.show();
+}
+
+function handlePaymentError() {
+    const modal = new bootstrap.Modal('#paymentErrorModal');
+    const reason = new URLSearchParams(window.location.search).get('reason');
+    
+    document.getElementById('errorReason').textContent = reason || 'Неизвестная ошибка';
+    
+    // Восстанавливаем корзину
+    const pendingCart = localStorage.getItem('pendingCart');
+    if(pendingCart) {
+        localStorage.setItem('cart', pendingCart);
+    }
+    
+    modal.show();
+}
+
+// Обновленная функция отправки формы
+document.getElementById('paymentForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Показываем модалку обработки
+    const processingModal = new bootstrap.Modal('#paymentProcessingModal');
+    processingModal.show();
+    
+    // Генерируем данные для SCI
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const total = cart.reduce((sum, item) => sum + item.price, 0);
+    const orderId = `SUNSET-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
+    
+    // Заполняем скрытые поля
+    document.getElementById('sciAmount').value = total;
+    document.getElementById('sciOrderId').value = orderId;
+    
+    // Сохраняем ID заказа
+    localStorage.setItem('lastOrderId', orderId);
+    
+    // Отправляем форму
+    setTimeout(() => {
+        this.submit();
+    }, 1000);
+});
+</script>
+
+</div>
 </body>
 </html>

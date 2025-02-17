@@ -181,10 +181,76 @@ h6 {
   color: #fff;
 }
 
+.btn-success {
+  font-size: 20px;
+  border-color: rgba(33, 37, 41, 0);
+  padding: 10px;
+  max-width: 150px 150px;
+  border-radius: 10px;
+  background-color: #da6c1d;
+  text-decoration: none;
+  color: white;
+}
+
+.btn-danger {
+  font-size: 20px;
+  border-color: rgba(33, 37, 41, 0);
+  padding: 10px;
+  max-width: 150px 150px;
+  border-radius: 10px;
+  background-color: #da6c1d;
+  text-decoration: none;
+  color: white;
+}
+
+.payment-state {
+  transition: all 0.3s ease;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.success-icon {
+  color: #28a745;
+  font-size: 4rem;
+}
+
+.error-icon {
+  color: #dc3545;
+  font-size: 4rem;
+}
+
+.payment-state.active {
+  display: block !important;
+}
+
+.btn-basket {
+  border-color: rgba(33, 37, 41, 0);
+  margin: 10px;
+  max-width: 150px 150px;
+  border-radius: 10px;
+  background-color: #da6c1d;
+  text-decoration: none;
+  color: white;
+}
+
+.doki {
+  text-decoration: none;
+  color: #da6c1d;
+}
+
 .btn :hover {
   color: #0D0D11
 }
 
+.btn-payment {
+  border-color: #0d0d1100;
+  font-size: 22px !important;
+  margin-left: 150px;
+  max-width: 150px;
+  background-color: #da6c1d !important;
+  border-radius: 10px;
+  color: #fff;
+}
 
 .product-card {
   transition: transform 0.2s;
@@ -219,6 +285,10 @@ h6 {
 
 .card {
   margin-bottom: 20px;
+}
+
+.payment-title {
+  margin-left: 0px;
 }
 
 .cart-button {

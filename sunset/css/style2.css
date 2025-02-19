@@ -17,13 +17,17 @@ body {
 
 .container {
   background-color: #0D0D11;
-  max-width: 1280px;
-  margin: 0 auto;
+  max-width: 1280px auto;
+}
+
+.section {
+  background-color: #0D0D11;
 }
 
 
 /* Шапка */
 .header-section {
+  display: flex;
   padding: 2rem 0;
   max-width: 1000px;
 }
@@ -35,12 +39,15 @@ body {
 }
 
 .main-heading {
+  max-width: 200px;
+  max-height: 150px;
+  margin-left: 100px;
   font-family: 'Comfortaa';
   font-size: 2.5rem;
   color: white;
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 550px;
 }
 
 .server-image {
@@ -51,13 +58,12 @@ body {
 
 /* Секция серверов */
 .servers-section {
-
-  margin: 160px 0;
+  margin: 160px 100px;
   margin-top: 3rem;
 }
 
 .section-title {
-  margin-top: 180px;
+  margin-top: 10px;
   font-size: 2rem;
   color: white;
   margin-bottom: 2rem;
@@ -162,7 +168,12 @@ h6 {
   border-color: #0D0D11 !important;
 }
 
+.welcome-container {
+  text-align: center;
+}
+
 .market-title {
+  text-align: center;
   margin-top: 180px;
   color: #fff;
   margin-bottom: 50px;
@@ -331,11 +342,15 @@ h6 {
 }
 
 .row {
+  margin-top: 180px !important;
   margin-left: 40px !important;
   color: #fff;
   background-color: #0D0D11 !important;
 }
 
+.col-md-6 {
+  font-size: 25px;
+}
 
 .col-lg-3 {
   font-size: 5px !important;
@@ -388,6 +403,7 @@ h6 {
 }
 
 .footer-logo {
+  margin-left: 30px;
   width: 3rem;
   height: 3rem;
 }
@@ -413,6 +429,7 @@ h6 {
 }
 
 .welcome-text {
+  margin-left: 100px;
   max-width: 500px;
 }
 

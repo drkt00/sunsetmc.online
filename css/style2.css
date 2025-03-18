@@ -6,6 +6,39 @@ body {
   /* box-sizing: border-box; */
 }
 
+    /* Стили для модального окна */
+    .pdf-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 1000;
+}
+
+.modal-content {
+    width: 80%;
+    height: 90%;
+    margin: 2% auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.close-btn {
+    float: right;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+#pdf-viewer {
+    width: 100%;
+    height: 95%;
+    border: none;
+}
+
 .items {
   display: flex;
   align-items: center;
@@ -51,9 +84,12 @@ body {
 }
 
 .server-image {
-  border-radius: 70px;
-  max-width: 500px;
+  border-radius: 0px;
+  max-width: 600px;
   height: auto;
+  position: absolute;
+  right: 0;
+  top: 100px;
 }
 
 /* Секция серверов */
@@ -87,7 +123,9 @@ body {
   font-size: 20px;
   width: 200px;
   font-family: "Comfortaa";
-  background: #da6c1d;
+  background: url('img/btn.svg') no-repeat center center;
+  background-color: #da6c1d;
+  background-size: cover;
   color: white;
   padding: 1.5rem 2rem;
   border: none;
@@ -96,8 +134,6 @@ body {
   position: relative;
   transition: transform 0.2s;
 }
-
-
 
 .server-btn:hover {
   color: #0D0D11;
@@ -242,6 +278,10 @@ h6 {
   background-color: #da6c1d;
   text-decoration: none;
   color: white;
+}
+
+.accept{
+  margin-top: 20px;
 }
 
 .doki {
@@ -429,8 +469,9 @@ h6 {
 }
 
 .welcome-text {
-  margin-left: 100px;
+  margin-left: 200px;
   max-width: 500px;
+  margin-top: 100px;
 }
 
 .header-section {
@@ -440,6 +481,78 @@ h6 {
   align-items: center;
 }
 
+/* футер */
+
+
+
+.disclaimer{
+  opacity: 25%;
+}
+
+.tg{
+  margin-left: 10px;
+}
+
+.img{
+  display: flex;
+  align-items: center;
+}
+
+.discord{
+  text-decoration: none;
+  color: #fff;
+  font-family: Comfortaa;
+}
+
+.footer-tabs {
+  color: #fff;
+  background: #0D0D11;
+  padding: 20px;
+  font-family: Comfortaa;
+}
+
+.tab-buttons {
+  color: #fff;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.tab-btn {
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  background: #0D0D11;
+  cursor: pointer;
+  border-radius: 4px 4px 0 0;
+  transition: background 0.3s;
+}
+
+.tab-btn:hover {
+  background: #0D0D11;
+}
+
+.tab-btn.active {
+  background: #0D0D11;
+    font-weight: bold;
+}
+
+.tab-pane {
+  display: none;
+  padding: 15px;
+  background: #0D0D11;
+  border-radius: 0 4px 4px 4px;
+}
+
+.tab-pane.active {
+  display: block;
+  animation: fade 0.3s;
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 /* Анимации */
 @keyframes fadeIn {
   from {
@@ -459,7 +572,7 @@ h6 {
   }
 
   .server-image {
-    max-width: 40%;
+    max-width: 100%;
   }
 
   .footer-content {

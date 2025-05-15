@@ -1,0 +1,170 @@
+:root{
+    --bg-color:#16151a;
+    --bg-color-light:#2b2a30;
+    --text-color:#FFE4D0;
+    --accent-color:#F67011;
+    --contrast-color:#ffffff;
+}
+
+
+
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body{
+    display: flex;
+    flex-direction: column; 
+    min-width: 320px;
+    font-family: 'Comfortaa', sans-serif !important;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/*====================== GENERAL RULES ================================*/
+
+.wrapper{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+main.main{
+    flex: 1 1 auto;
+    color: var(--text-color);
+}
+
+/* Видео как фон */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Блюр-оверлей */
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(20px);
+  background-color: rgba(0, 0, 0, 0.2); /* мягкое затемнение */
+  z-index: -1;
+}
+/*====================== GENERAL RULES ================================*/
+
+/*====================== HEADER RULES ================================*/
+
+.navbar {
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+}
+
+.nav-link, .navbar-brand, .d-inline-block{
+    text-decoration: none;
+    color: var(--text-color) !important;
+    font-weight: 600;  
+    font-size: 1.2rem;
+}
+
+.navbar-toggler{
+    color: var(--bg-color) !important;
+}
+
+.offcanvas {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+
+/*====================== HEADER RULES ================================*/
+
+/*====================== BUTTONS ================================*/
+
+.btn-primary {
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--text-color);
+    --bs-btn-bg: var(--accent-color);
+    --bs-btn-border-color: var(--accent-color);
+    --bs-btn-hover-color: var(--accent-color);
+    --bs-btn-hover-bg: #{shade-color($bd-violet, 10%)};
+    --bs-btn-hover-border-color: #{shade-color($bd-violet, 10%)};
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: #{shade-color($bd-violet, 20%)};
+    --bs-btn-active-border-color: #{shade-color($bd-violet, 20%)};
+  }
+
+  .text-success {
+    color: var(--text-color) !important;
+  }
+
+  .copied {
+    background-color: var(--bg-color) !important; /* Bootstrap success green */
+    border-color: var(--accent-color) !important;
+    color: var(--accent --color) !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px var(--accent-color) !important;
+  }
+  
+
+  /*====================== FOOTER RULES ================================*/
+
+.footer{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.footer-btn {
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: var(--text-color);
+  --bs-btn-bg: var(--bg-color);
+  --bs-btn-border-color: var(--bg-color);
+  --bs-btn-hover-color: var(--text-color);
+  --bs-btn-hover-bg: var(--bg-color-light);
+}
+/*====================== BUTTONS ================================*/
+
+  /*====================== FOOTER RULES ================================*/
+
+  .ticker-container {
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(255, 0, 0, 0.7); /* полупрозрачный красный */
+    color: white;
+    font-weight: bold;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+  
+  .ticker-content {
+    display: flex;
+    width: max-content;
+    animation: scroll 20s linear infinite;
+  }
+  
+  .ticker-text {
+    display: flex;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  

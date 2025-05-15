@@ -1,0 +1,104 @@
+:root{
+    --bg-color:#16151a;
+    --bg-color-light:#2b2a30;
+    --text-color:#FFE4D0;
+    --accent-color:#F67011;
+    --contrast-color:#ffffff;
+}
+
+
+.navbar {
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+}
+
+.nav-link, .navbar-brand, .d-inline-block{
+    text-decoration: none;
+    color: var(--text-color) !important;
+    font-weight: 600;  
+    font-size: 1.2rem;
+}
+
+.navbar-toggler{
+    color: var(--bg-color) !important;
+}
+
+.offcanvas {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+
+
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body{
+    display: flex;
+    flex-direction: column; 
+    min-width: 320px;
+    font-family: 'Comfortaa', sans-serif !important;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.bg {
+        background-image: url(/assets/img/404bg.jpeg); 
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        padding-left: 5%;
+        color: var(--text-color);
+        position: relative;
+    }
+
+.overlay {
+        background: rgba(0, 0, 0, 0.65);
+        padding: 40px;
+        border-radius: 20px;
+        max-width: 450px;
+      }
+
+h1 {
+        font-size: 5rem;
+        font-weight: 700;
+        color: var(--accent-color);
+      }
+
+.btn-back {
+    color: var(--text-color);
+    background-color: var(--accent-color);
+    border: none;
+        margin-top: 20px;
+        border-radius: 30px;
+        padding: 10px 30px;
+        font-size: 1rem;
+      }
+.btn-back:hover {
+    background-color: var(--text-color);
+    color: var(--accent-color);
+    transition: 0.3s;
+}
+
+.footer{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.footer-btn {
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: var(--text-color);
+  --bs-btn-bg: var(--bg-color);
+  --bs-btn-border-color: var(--bg-color);
+  --bs-btn-hover-color: var(--text-color);
+  --bs-btn-hover-bg: var(--bg-color-light);
+}

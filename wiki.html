@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SunSet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/wiki.css">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="assets/img/sslogo.svg">
+  </head>
+    <body>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <nav class="navbar fixed-top navbar-expand-md sticky-top border-bottom" data-bs-theme="dark">
+                <div class="container">
+                  <a class="navbar-brand d-md-none" href="#">
+                    <img src="assets/img/sslogo.svg" width="35" height="35" aria-hidden="true">
+                    SunSet
+                  </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+                    <div class="offcanvas-header">
+                      <h5 class="offcanvas-title" id="offcanvasLabel">SunSet</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                      <ul class="navbar-nav flex-grow-1 justify-content-between">
+                        <li class="nav-item"><a class="nav-link" href="#" aria-label="SunSet">
+                          <img src="assets/img/sslogo.svg" width="35" height="35" aria-hidden="true">
+                        </a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i> Главная</a></li>
+                        <li class="nav-item"><a class="nav-link" href="donate.html"><i class="fa-solid fa-coins"></i> Донат</a></li>
+                        <li class="nav-item"><a class="nav-link" href="map.html"><i class="fa-solid fa-map"></i> Карта</a></li>
+                        <li class="nav-item"><a class="nav-link" href="rules.html"><i class="fa-solid fa-scale-balanced"></i> Правила</a></li>                        
+                        <li class="nav-item"><a class="nav-link" href="wiki.html"><i class="fa-solid fa-book"></i> Вики</a></li>
+                        </a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </header> 
+
+<div class="container-fluid mt-5 pt-5">
+  <div class="row">
+    
+    <!-- Боковое меню для больших экранов -->
+    <div class="col-md-3 d-none d-md-block mb-4">
+      <ul class="wiki-sidebar nav flex-column">
+        <li class="nav-category">Основное</li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#faq" data-bs-toggle="tab">
+            <i class="fa-solid fa-circle-question"></i> FAQ
+          </a>
+        </li>
+        <li class="nav-category mt-3">Игровой контент</li>
+        <li class="nav-item">
+          <a class="nav-link" href="#gameproc" data-bs-toggle="tab"><i class="fa-solid fa-puzzle-piece"></i> Игровой процесс</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#crafts" data-bs-toggle="tab"><i class="fa-solid fa-pen-ruler"></i> Серверные крафты</a>
+        </li>
+        <li class="nav-category mt-3">Legal</li>
+        <li class="nav-item">
+          <a class="nav-link" href="#ps" data-bs-toggle="tab"><i class="fa-solid fa-file-circle-check"></i> Пользовательское соглашение</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#pk" data-bs-toggle="tab"><i class="fas fa-lock me-2"></i> Политика конфиденциальности</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#oferta" data-bs-toggle="tab"><i class="fa-solid fa-file"></i> Оферта о добровольных пожертвованиях</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Мобильное меню -->
+    <div class="col-12 d-md-none mb-3">
+      <button class="btn menu-toggle w-100" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
+        Меню <i class="fa-solid fa-bars ms-2"></i>
+      </button>
+      <div class="collapse mt-2" id="mobileMenu">
+        <ul class="wiki-sidebar nav flex-column">
+          <li class="nav-category">Основное</li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#faq" data-bs-toggle="tab"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+          </li>
+          <li class="nav-category mt-3">Игровой контент</li>
+          <li class="nav-item">
+            <a class="nav-link" href="#gameproc" data-bs-toggle="tab"><i class="fa-solid fa-puzzle-piece"></i> Игровой процесс</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#crafts" data-bs-toggle="tab"><i class="fa-solid fa-pen-ruler"></i> Серверные крафты</a>
+          </li>
+          <li class="nav-category mt-3">Legal</li>
+          <li class="nav-item">
+            <a class="nav-link" href="#ps" data-bs-toggle="tab"><i class="fa-solid fa-file-circle-check"></i> Пользовательское соглашение</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#pk" data-bs-toggle="tab"><i class="fas fa-lock me-2"></i> Политика конфиденциальности</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#oferta" data-bs-toggle="tab"><i class="fa-solid fa-file"></i> Оферта о добровольных пожертвованиях</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Контент вкладок -->
+    <div class="col-md-9 col-12">
+      <div class="tab-content">
+    <!-- Контент -->
+    <div class="col-md-9 col-12">
+      <div class="tab-content">
+<div class="tab-pane fade show active" id="faq">
+  <h2>Часто задаваемые вопросы (FAQ)</h2>
+
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <strong>Как подключиться к серверу?</strong><br>
+      Откройте Minecraft нужной версии, перейдите в раздел «Сетевая игра», нажмите «Добавить сервер» и введите IP: <code>play.sunsetmc.online</code>. Если вы играете на Bedrock, используйте IP: <code>play.sunsetmc.online:2209</code>.
+    </li>
+
+    <li class="list-group-item">
+      <strong>Какие версии Minecraft поддерживаются?</strong><br>
+      Мы поддерживаем и рекомендуем использовать последнюю стабильную для наилучшего опыта.
+    </li>
+
+    <li class="list-group-item">
+      <strong>Можно ли играть без лицензии?</strong><br>
+      Да, сервер поддерживает как лицензионные, так и пиратские клиенты.
+    </li>
+    <li class="list-group-item">
+      <strong>Можно ли играть на бедрок версии или на консоли?</strong><br>
+      Да, сервер поддерживает такие версии, как Bedrock и консоли. Для подключения используйте IP: <code>play.sunsetmc.online:2209</code>.
+    </li>
+
+    <li class="list-group-item">
+      <strong>Как получить донат/привилегии?</strong><br>
+      Перейдите во вкладку <strong>Магазин</strong> на сайте и выберите нужный статус. После чего написать администрации в Discor, чтобы активировать его на вашем аккаунте.
+    </li>
+
+    <li class="list-group-item">
+      <strong>Меня забанили. Что делать?</strong><br>
+      Если вы считаете, что бан ошибочный — создайте обращение в Discord или через форму поддержки. Администрация рассмотрит заявку.
+    </li>
+
+    <li class="list-group-item">
+      <strong>Сколько слотов на сервере?</strong><br>
+      На данный момент сервер рассчитан на <code>40+</code> игроков. Если онлайн стабильно высокий — лимит будет увеличен.
+    </li>
+
+    <li class="list-group-item">
+      <strong>Есть ли вайпы?</strong><br>
+      Да, вайпы происходит при большом обновлении игры. Обязательно делаем анонсы заранее.
+    </li>
+
+    <li class="list-group-item">
+      <strong>Можно ли создать клан или приватку?</strong><br>
+      Да! Используйте команды <code>/clan create</code> для клана. Подробности — в разделе "Игровой процесс".
+    </li>
+
+    <li class="list-group-item">
+      <strong>Как защитить свой аккаунт?</strong><br>
+      Обязательно поставьте <code>2fa</code> в лобби сервера. Не передавайте никому свои данные.
+    </li>
+
+    <li class="list-group-item">
+      <strong>Что делать, если потерял донат?</strong><br>
+      Обратитесь в поддержку с логами/чеком об оплате. Мы проверим и восстановим привилегии при подтверждении.
+    </li>
+  </ul>
+</div>
+
+<div class="tab-pane fade" id="gameproc">
+  <h2 class="mb-4"><i class="fa-solid fa-gamepad"></i> Игровой процесс</h2>
+
+  <div class="row g-4">
+    <!-- Режимы -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body">
+          <h5 class="card-title"><i class="fa-solid fa-gear"></i> Режимы игры</h5>
+          <ul class="list-unstyled">
+            <li><strong>SunSet:</strong> классическое выживание с ресурсами и строительством.</li>
+            <li><strong>ИВЕНТ:</strong> место проведения ивентов.</li>            
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Экономика -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body">
+          <h5 class="card-title"><i class="fa-solid fa-money-bill-transfer"></i> Экономика и Торговля</h5>
+          <ul class="list-unstyled">
+            <li>Продавай ресурсы в <code>/shop</code></li>
+            <li>Ставь товары на <code>/ah</code> — аукцион.</li>
+            <li>Работай: <code>/jobs</code></li>
+            <li>Прокачивай баланс и обменивай валюту.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Приват -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body">
+          <h5 class="card-title"><i class="fa-solid fa-house"></i> Приват и Защита</h5>
+          <ul class="list-unstyled">
+            <li><code>/rg claim</code> — защити свою территорию.</li>
+            <li><code>/rg info</code> — проверь информацию о регионе.</li>
+            <li>Гриферство запрещено, строй безопасно.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Квесты -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body">
+          <h5 class="card-title"><i class="fa-solid fa-code-pull-request"></i> Квесты и Ивенты</h5>
+          <ul class="list-unstyled">
+            <li><code>/quests</code> — задания с наградами.</li>
+            <li>Сюжетные и ежедневные квесты.</li>
+            <li>Паркур, PvP турниры, бои с боссами.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Карта -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body">
+          <h5 class="card-title"><i class="fa-solid fa-map-location-dot"></i> Карта мира</h5>
+          <p>Открой <a href="map.html" target="_blank">карту</a> сервера:  
+          </p>
+          <ul class="list-unstyled">
+            <li>Смотри варпы, ивенты и спавн.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Команды -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body">
+          <h5 class="card-title"><i class="fa-solid fa-table-list"></i> Основные команды</h5>
+          <pre><code>
+/spawn — на спавн
+/sethome — установить дом
+/home — домой
+/tpa <ник> — телепорт к игроку
+/warp <название> — варпы
+          </code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="tab-pane fade" id="crafts">
+          <h2>Я СЮДА ОБЪЯЗАТЕЛЬНО ЧТО-ТО ДОБАВЛЮ</h2>
+        </div>
+        <div class="tab-pane fade" id="ps">
+<div class="terms-content container py-5 text-light">
+  <h2 class="mb-4">Пользовательское соглашение</h2>
+
+  <h4 class="mt-4">1. Общие положения</h4>
+  <p>1.1. Настоящее Пользовательское соглашение (далее — "Соглашение") регулирует отношения между Администрацией сайта (далее — "Администрация") и физическим или юридическим лицом (далее — "Пользователь"), использующим данный сайт.</p>
+  <p>1.2. Используя сайт, Пользователь соглашается с условиями настоящего Соглашения.</p>
+  <p>1.3. Администрация оставляет за собой право изменять условия Соглашения без предварительного уведомления Пользователя.</p>
+
+  <h4 class="mt-4">2. Права и обязанности сторон</h4>
+  <p>2.1. Пользователь имеет право:</p>
+  <ul>
+    <li>использовать сайт в личных и коммерческих целях, если это не нарушает условия Соглашения;</li>
+    <li>получать информацию, размещенную на сайте;</li>
+    <li>обращаться в Администрацию с вопросами и предложениями.</li>
+  </ul>
+
+  <p>2.2. Пользователь обязуется:</p>
+  <ul>
+    <li>не совершать действий, которые могут привести к нарушению работы сайта;</li>
+    <li>не использовать информацию, полученную на сайте, в незаконных целях;</li>
+    <li>соблюдать авторские права и другие права на результаты интеллектуальной деятельности.</li>
+  </ul>
+
+  <p>2.3. Администрация имеет право:</p>
+  <ul>
+    <li>приостанавливать или прекращать доступ Пользователя к сайту при нарушении условий Соглашения;</li>
+    <li>изменять содержание сайта, его структуру и функционал по своему усмотрению;</li>
+    <li>собирать и обрабатывать данные Пользователя в соответствии с политикой конфиденциальности.</li>
+  </ul>
+
+  <h4 class="mt-4">3. Ответственность</h4>
+  <p>3.1. Пользователь самостоятельно несет ответственность за использование сайта и размещенную на нем информацию.</p>
+  <p>3.2. Администрация не несет ответственности за:</p>
+  <ul>
+    <li>временные сбои и перерывы в работе сайта;</li>
+    <li>достоверность и актуальность информации, размещенной Пользователями;</li>
+    <li>любые убытки, возникшие у Пользователя в результате использования сайта.</li>
+  </ul>
+
+  <h4 class="mt-4">4. Разрешение споров</h4>
+  <p>4.1. Все споры и разногласия, возникающие из настоящего Соглашения, решаются путем переговоров.</p>
+</div>
+
+        </div>
+        <div class="tab-pane fade" id="pk">
+<div class="policy-content container py-5 text-light">
+    <h2 class="mb-4">Политика конфиденциальности</h2>
+    <p>
+      Настоящая Политика конфиденциальности описывает, как <strong>SunSet</strong> (далее – "Компания", "мы", "нас" или "наш") 
+      собирает, использует и защищает информацию, предоставляемую пользователями (далее – "Пользователь" или "вы") 
+      при использовании нашего <a href="https://sunsetmc.online/" target="_blank">веб-сайта </a> и/или услуг.
+    </p>
+
+    <h4 class="mt-4">1. Сбор информации</h4>
+    <ul>
+      <li>Персональные данные (имя, адрес электронной почты, номер телефона и др.), предоставленные вами при регистрации, оформлении заказа или заполнении формы обратной связи.</li>
+      <li>Технические данные (IP-адрес, тип браузера, информация об устройстве, файлы cookie и др.) для улучшения работы сайта.</li>
+    </ul>
+
+    <h4 class="mt-4">2. Использование информации</h4>
+    <p>Мы используем собранную информацию для следующих целей:</p>
+    <ul>
+      <li>Предоставление услуг и управление учетной записью.</li>
+      <li>Обработка заказов и выполнение обязательств перед вами.</li>
+      <li>Улучшение работы сайта и пользовательского опыта.</li>
+      <li>Связь с вами, включая рассылку уведомлений, предложений и новостей.</li>
+    </ul>
+
+    <h4 class="mt-4">3. Защита данных</h4>
+    <p>Мы принимаем все разумные меры для защиты ваших персональных данных от несанкционированного доступа, изменения, раскрытия или уничтожения.</p>
+
+    <h4 class="mt-4">4. Передача данных третьим лицам</h4>
+    <p>Мы не продаем, не обмениваем и не передаем ваши персональные данные третьим лицам, за исключением случаев, когда это необходимо для предоставления услуг, выполнения требований законодательства или защиты наших прав.</p>
+
+    <h4 class="mt-4">5. Файлы cookie</h4>
+    <p>Наш сайт использует файлы cookie для анализа поведения пользователей, улучшения работы сайта и предоставления персонализированного контента. 
+      Вы можете настроить параметры браузера для отказа от файлов cookie, но это может повлиять на доступность некоторых функций сайта.</p>
+
+    <h4 class="mt-4">6. Права пользователя</h4>
+    <p>Вы имеете право:</p>
+    <ul>
+      <li>Получить информацию о ваших персональных данных, которые мы обрабатываем.</li>
+      <li>Требовать исправления или удаления ваших данных.</li>
+      <li>Отозвать согласие на обработку данных.</li>
+    </ul>
+
+    <h4 class="mt-4">7. Изменения в Политике конфиденциальности</h4>
+    <p>Мы оставляем за собой право вносить изменения в настоящую Политику конфиденциальности. 
+      Обновления будут опубликованы на этой странице с указанием даты вступления в силу.</p>
+
+    <h4 class="mt-4">8. Контактная информация</h4>
+    <p>Если у вас возникли вопросы по поводу настоящей Политики конфиденциальности, свяжитесь с нами: 
+      <a href="https://discord.gg/hvHxbAk6jR" target="_blank">наш Discord-сервер</a>
+    </p>
+</div>
+</div>
+
+  <div class="tab-pane fade" id="oferta">
+    <div class="donation-offer-content container py-5 text-light">
+      <h2 class="mb-4">Оферта о добровольных пожертвованиях</h2>
+
+      <p>Настоящая Оферта о добровольных пожертвованиях (далее — "Оферта") адресована любому физическому или юридическому лицу (далее — "Пожертвователь"), желающему оказать финансовую поддержку проекту SunSet (далее — "Проект"), и представляет собой официальное предложение заключить соглашение о добровольных пожертвованиях на указанных ниже условиях.</p>
+
+      <h4 class="mt-4">1. Общие положения</h4>
+      <p>1.1. Настоящая Оферта регулирует порядок внесения добровольных пожертвований в пользу Проекта и использования этих средств.</p>
+      <p>1.2. Пожертвование является добровольным безвозмездным переводом денежных средств Пожертвователем для поддержки Проекта.</p>
+      <p>1.3. Принятием Оферты (акцептом) признается перечисление Пожертвователем денежных средств на счет Проекта любым удобным способом, указанным на <a href="https://sunsetmc.online/" class="text-warning" target="_blank">сайте</a>.</p>.</p>
+
+      <h4 class="mt-4">2. Цели пожертвований</h4>
+      <p>2.1. Все поступившие пожертвования используются для обеспечения функционирования и развития Проекта, включая, но не ограничиваясь: оплату хостинга, техническое обслуживание, улучшение игровых серверов и разработку нового контента.</p>
+
+      <h4 class="mt-4">3. Права и обязанности сторон</h4>
+      <p>3.1. Пожертвователь имеет право:</p>
+      <ul>
+        <li>вносить пожертвования в любом размере;</li>
+        <li>получить информацию об использовании пожертвованных средств по запросу.</li>
+      </ul>
+      <p>3.2. Проект обязуется использовать полученные пожертвования исключительно для целей, указанных в пункте 2.1.</p>
+      <p>3.3. Проект не несет обязательств перед Пожертвователем по предоставлению каких-либо услуг или товаров в обмен на пожертвование.</p>
+
+      <h4 class="mt-4">4. Благодарственные бонусы</h4>
+      <p>4.1. Пожертвователь может получить виртуальные бонусы (внутриигровые привилегии, статус, предметы и др.) в знак благодарности за поддержку Проекта.</p>
+      <p>4.2. Указанные бонусы не являются товаром или услугой и предоставляются исключительно по усмотрению Проекта.</p>
+      <p>4.3. Пожертвование не дает Пожертвователю дополнительных прав, кроме получения бонуса, если он предусмотрен.</p>
+
+      <h4 class="mt-4">5. Отказ от возврата средств</h4>
+      <p>5.1. Пожертвования являются добровольными и безвозвратными. Возврат денежных средств не производится.</p>
+
+      <h4 class="mt-4">6. Заключительные положения</h4>
+      <p>6.1. Проект оставляет за собой право вносить изменения в настоящую Оферту. Актуальная редакция всегда доступна на <a href="https://sunsetmc.online/" class="text-warning" target="_blank">сайте</a>.</p>
+      <p>6.2. Совершая пожертвование, Пожертвователь подтверждает, что ознакомился и согласен с условиями Оферты.</p>
+    </div>
+
+  </div>  
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <footer class="footer mt-5 pt-4 pb-3">
+          <div class="container-fluid">
+            <div class="d-flex flex-wrap justify-content-center gap-3 text-center">
+              <a href="index.html" class="btn footer-btn px-4">Главная</a>
+              <a href="https://discord.gg/hvHxbAk6jRR" class="btn footer-btn px-4">Discord</a>
+              <a href="wiki.html" class="btn footer-btn px-4">Вики</a>
+              <a href="wiki.html#pk" class="btn footer-btn px-4">Политика конфиденциальности</a>
+              <a href="wiki.html#ps" class="btn footer-btn px-4">Пользовательское соглашение</a>
+            </div>
+          </div>
+            <div class="text-center mt-4">
+              <p class="mb-0 small">Not an official Minecraft product. We are in no way affiliated with or endorsed by Mojang Synergies AB, Microsoft Corporation or other rightsholders.</p>
+            </div>
+          </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+        <script src="assets/js/main.js"> </script>
+        <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hash = window.location.hash;
+    if (hash) {
+      const trigger = document.querySelector(`a[href="${hash}"]`);
+      if (trigger) {
+        new bootstrap.Tab(trigger).show();
+      }
+    }
+  });
+</script>
+    </body>
+</html>

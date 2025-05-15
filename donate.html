@@ -1,0 +1,1302 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SunSet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style_shop.css">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="assets/img/sslogo.svg">
+  </head>
+    <body>
+      <header>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <nav class="navbar fixed-top navbar-expand-md sticky-top border-bottom" data-bs-theme="dark">
+                <div class="container">
+                  <a class="navbar-brand d-md-none" href="#">
+                    <img src="assets/img/sslogo.svg" width="35" height="35" aria-hidden="true">
+                    SunSet
+                  </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+                    <div class="offcanvas-header">
+                      <h5 class="offcanvas-title" id="offcanvasLabel">SunSet</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                      <ul class="navbar-nav flex-grow-1 justify-content-between">
+                        <li class="nav-item"><a class="nav-link" href="#" aria-label="SunSet">
+                          <img src="assets/img/sslogo.svg" width="35" height="35" aria-hidden="true">
+                        </a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i> Главная</a></li>
+                        <li class="nav-item"><a class="nav-link" href="donate.html"><i class="fa-solid fa-coins"></i> Донат</a></li>
+                        <li class="nav-item"><a class="nav-link" href="map.html"><i class="fa-solid fa-map"></i> Карта</a></li>
+                        <li class="nav-item"><a class="nav-link" href="rules.html"><i class="fa-solid fa-scale-balanced"></i> Правила</a></li>                        
+                        <li class="nav-item"><a class="nav-link" href="wiki.html"><i class="fa-solid fa-book"></i> Вики</a></li>
+                        </a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+          <div class="ticker-container">
+            <div class="ticker-content">
+              <div class="ticker-text">
+                Сайт работает в тестовом режиме и могут возникать проблемы • 
+                Сайт работает в тестовом режиме и могут возникать проблемы • 
+                Сайт работает в тестовом режиме и могут возникать проблемы • 
+              </div>
+              <div class="ticker-text">
+                Сайт работает в тестовом режиме и могут возникать проблемы • 
+                Сайт работает в тестовом режиме и могут возникать проблемы • 
+                Сайт работает в тестовом режиме и могут возникать проблемы • 
+              </div>
+            </div>
+          </div>
+
+      <body>
+        <div class="container my-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <select id="categoryFilter" class="form-select w-auto">
+              <option value="all">Все категории</option>
+              <option value="prev">Привилегии</option>
+              <option value="comm">Команды</option>
+              <option value="reg">Приваты</option>              
+              <option value="shops">Магазины</option>
+              <option value="other">Другое</option>
+            </select>
+            <select id="currencySelect" class="form-select w-auto">
+              <option value="USD">USD</option>
+              <option value="EUR">EUR</option>
+              <option value="UAH">UAH</option>
+              <option value="RUB">RUB</option>              
+            </select>
+          </div>
+        
+          <div class="row" id="productList">
+            <!-- Карточка товара -->
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="comm">
+              <div class="card">
+                <img src="assets/img/товары/AllCommands.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">Все команды</h5>
+                  <p class="card-text"><span class="price" data-price="10">$10</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-1">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-1">
+              <p><strong>Все команды:</strong></p>
+              <ul>
+                <br> /hat – надеть блок на голову
+                <br>/ptime – персональное время суток
+                <br>/feed – пополнение сытости (раз в 5 минут)
+                <br> /dback – телепорт на место смерти
+                <br> /ender (/ec) – доступ к эндер-сундуку
+                <br> /workbench (/wb) – верстак в любой точке мира
+                <br> /anvil – вызов наковальни
+                <br> /repair all – починка всей брони и предметов (раз в час)
+                <br> /back – телепорт на последнее место
+                <br> /armorstand — редактор стоек для брони
+              </ul>
+            </template>
+            <!-- Карточка товара -->
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="prev">
+              <div class="card">
+                <img src="assets/img/товары/Sponsor.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">Спонсор навсегда</h5>
+                  <p class="card-text"><span class="price" data-price="25">$25</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-2">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+              <template id="desc-2">
+                <p><strong>SPONSOR :</strong></p>
+                <ul>
+                  <br> Префикс [SR] в чате
+                  <br> Установка точек дома: 50 (!) не суммируются с доп. покупкой
+                  <br> Доступных регионов: 10 (!) не суммируются с доп. покупкой
+                  <br> Размер региона (в блоках): 1 000 000
+                  <br> Возможность выставить 60 предметов на аукционе (!) не суммируются с доп. покупкой
+                  <br> Доступ к премиум работам
+                  <br>
+                  <br> Команды:
+                  <br>/heal — вылечить себя (раз в 30 минут)
+                  <br>/armorstand — редактор стоек для брони
+                  <br>Сохранение инвентаря и опыта после смерти
+                  <br> Все преимущества VIP+
+                  <br>
+                  <br>Флаги:
+                  <br>- Отключение спавна определенных мобов (/rg flag <название региона> deny-spawn creeper, spider и.т.д)
+                  <br>- Установка сообщения при входе в регион (/rg flag <название региона> greeting)
+                  <br>- Установка сообщения при выходе из региона (/rg flag <название региона> farewell)
+                  <br>
+                  <br>Срок действия привилегии: навсегда
+                </ul>
+              </template>
+            <!-- Карточка товара -->
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="prev">
+              <div class="card">
+                <img src="assets/img/товары/SponsorM.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">Спонсор на месяц</h5>
+                  <p class="card-text"><span class="price" data-price="10">$10</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-3">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-3">
+              <p><strong>SPONSOR :</strong></p>
+              <ul>
+                <br> Префикс [SR] в чате
+                <br> Установка точек дома: 50 (!) не суммируются с доп. покупкой
+                <br> Доступных регионов: 10 (!) не суммируются с доп. покупкой
+                <br> Размер региона (в блоках): 1 000 000
+                <br> Возможность выставить 60 предметов на аукционе (!) не суммируются с доп. покупкой
+                <br> Доступ к премиум работам
+                <br>
+                <br> Команды:
+                <br>/heal — вылечить себя (раз в 30 минут)
+                <br>/armorstand — редактор стоек для брони
+                <br>Сохранение инвентаря и опыта после смерти
+                <br> Все преимущества VIP+
+                <br>
+                <br>Флаги:
+                <br>- Отключение спавна определенных мобов (/rg flag <название региона> deny-spawn creeper, spider и.т.д)
+                <br>- Установка сообщения при входе в регион (/rg flag <название региона> greeting)
+                <br>- Установка сообщения при выходе из региона (/rg flag <название региона> farewell)
+                <br>
+                <br>Срок действия привилегии: 30 дней
+              </ul>
+            </template>
+            <!-- Карточка товара -->
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="prev">
+              <div class="card">
+                <img src="assets/img/товары/VIPPlus.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">VIP+ навсегда</h5>
+                  <p class="card-text"><span class="price" data-price="15">$15</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-4">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-4">
+              <p><strong>VIP+ :</strong></p>
+              <ul>
+                            <br>Префикс [VIP+] в чате
+                            <br>Установка точек дома: 20 (!) не суммируются с доп. покупкой
+                            <br>Доступных регионов: 5 (!) не суммируются с доп. покупкой
+                            <br>Размер региона (в блоках): 1 000 000
+                            <br>Возможность выставить 42 предмета на аукционе (!) не суммируются с доп. покупкой
+                            <br>
+                            <br>  Команды:
+                            <br>/repair all — починка предметов (раз в 30 минут)
+                            <br>/armorstand — редактор стоек для брони
+                            <br>/back - телепорт на последнее место
+                            <br>/ender или /ec — доступ к эндер-сундуку
+                            <br>Сохранение инвентаря после смерти
+                            <br>Все преимущества VIP
+                            <br>
+                            <br>Флаги:
+                            <br>- Отключение спавна мобов (/rg flag <название региона> mob-spawning deny)
+                            <br>- отключения огня в регионе: (/rg flag <название региона> fire-spread deny)
+                            <br>- отключения огня лавы в регионе: (/rg flag <название региона> lava-fire deny)
+                            <br>
+                            <br>  Срок действия привилегии: навсегда
+              </ul>
+            </template>
+            <!-- Карточка товара -->
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="prev">
+              <div class="card">
+                <img src="assets/img/товары/VIPPlusM.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">VIP+ на месяц</h5>
+                  <p class="card-text"><span class="price" data-price="6">$6</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-4">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-4">
+              <p><strong>VIP+ :</strong></p>
+              <ul>
+                            <br>Префикс [VIP+] в чате
+                            <br>Установка точек дома: 20 (!) не суммируются с доп. покупкой
+                            <br>Доступных регионов: 5 (!) не суммируются с доп. покупкой
+                            <br>Размер региона (в блоках): 1 000 000
+                            <br>Возможность выставить 42 предмета на аукционе (!) не суммируются с доп. покупкой
+                            <br>
+                            <br>  Команды:
+                            <br>/repair all — починка предметов (раз в 30 минут)
+                            <br>/armorstand — редактор стоек для брони
+                            <br>/back - телепорт на последнее место
+                            <br>/ender или /ec — доступ к эндер-сундуку
+                            <br>Сохранение инвентаря после смерти
+                            <br>Все преимущества VIP
+                            <br>
+                            <br>Флаги:
+                            <br>- Отключение спавна мобов (/rg flag <название региона> mob-spawning deny)
+                            <br>- отключения огня в регионе: (/rg flag <название региона> fire-spread deny)
+                            <br>- отключения огня лавы в регионе: (/rg flag <название региона> lava-fire deny)
+                            <br>
+                            <br>  Срок действия привилегии: 30 дней
+              </ul>
+            </template>            
+            <!-- Карточка товара -->
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="prev">
+              <div class="card">
+                <img src="assets/img/товары/VIP.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">VIP навсегда</h5>
+                  <p class="card-text"><span class="price" data-price="8">$8</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-5">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-5">
+              <p><strong>VIP:</strong></p>
+              <ul>
+                            <br>Префикс [VIP] в чате
+                            <br>Установка точек дома: 15 (!) не суммируются с доп. покупкой
+                            <br>Доступных регионов: 7 (!) не суммируются с доп. покупкой
+                            <br>Размер региона (в блоках): 500 000
+                            <br>Возможность выставить 25 предметов на аукционе (!) не суммируются с доп. покупкой
+                            <br>
+                            <br>Команды:
+                            <br>/feed — пополнение сытости (раз в 10 минут)
+                            <br>/dback — телепорт на место смерти
+                            <br>/workbench или /wb — верстак в любой точке мира
+                            <br>/anvil — вызов наковальни
+                            <br>Все преимущества P+
+                            <br>
+                            <br>Срок действия привилегии: навсегда
+              </ul>
+            </template>
+            <!-- Карточка товара -->
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="prev">
+              <div class="card">
+                <img src="assets/img/товары/VIPM.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">VIP на месяц</h5>
+                  <p class="card-text"><span class="price" data-price="3">$3</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-6">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-6">
+              <p><strong>VIP:</strong></p>
+              <ul>
+                            <br>Префикс [VIP] в чате
+                            <br>Установка точек дома: 15 (!) не суммируются с доп. покупкой
+                            <br>Доступных регионов: 7 (!) не суммируются с доп. покупкой
+                            <br>Размер региона (в блоках): 500 000
+                            <br>Возможность выставить 25 предметов на аукционе (!) не суммируются с доп. покупкой
+                            <br>
+                            <br>Команды:
+                            <br>/feed — пополнение сытости (раз в 10 минут)
+                            <br>/dback — телепорт на место смерти
+                            <br>/workbench или /wb — верстак в любой точке мира
+                            <br>/anvil — вызов наковальни
+                            <br>Все преимущества P+
+                            <br>
+                            <br>Срок действия привилегии: 30 дней
+              </ul>
+            </template>   
+            <!-- Карточка товара -->
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="prev">
+              <div class="card">
+                <img src="assets/img/товары/PlayerPlus.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">Player+ навсегда</h5>
+                  <p class="card-text"><span class="price" data-price="3">$3</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-7">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-7">
+              <p><strong>PLAYER+:</strong></p>
+              <ul>
+                            <br> Префикс [P+] в чате
+                            <br> Установка точек дома: 5 (!) не суммируются с доп. покупкой
+                            <br> Доступных регионов: 4 (!) не суммируются с доп. покупкой
+                            <br> Размер региона (в блоках): 500 000
+                            <br> Возможность выставить 10 предметов на аукционе (!) не суммируются с доп. покупкой
+                            <br> 
+                            <br>  Команды:
+                            <br> /hat — надеть предмет на голову
+                            <br> /ptime – персональное время суток
+                            <br> 
+                            <br>Флаги:
+                            <br>- Отключение опадения листвы (/rg flag <название региона> leaf-decay deny)
+                            <br>- Отключения возможности затоптать грядки (/rg flag <название региона> block-trampling deny)
+                            <br>
+                            <br> Срок действия привилегии: навсегда
+              </ul>
+            </template>    
+            <!-- Карточка товара -->
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="prev">
+              <div class="card">
+                <img src="assets/img/товары/PlayerPlusM.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">Player+ на месяц</h5>
+                  <p class="card-text"><span class="price" data-price="1">$1</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-8">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-8">
+              <p><strong>PLAYER+:</strong></p>
+              <ul>
+                            <br> Префикс [P+] в чате
+                            <br> Установка точек дома: 5 (!) не суммируются с доп. покупкой
+                            <br> Доступных регионов: 4 (!) не суммируются с доп. покупкой
+                            <br> Размер региона (в блоках): 500 000
+                            <br> Возможность выставить 10 предметов на аукционе (!) не суммируются с доп. покупкой
+                            <br> 
+                            <br>  Команды:
+                            <br> /hat — надеть предмет на голову
+                            <br> /ptime – персональное время суток
+                            <br> 
+                            <br>Флаги:
+                            <br>- Отключение опадения листвы (/rg flag <название региона> leaf-decay deny)
+                            <br>- Отключения возможности затоптать грядки (/rg flag <название региона> block-trampling deny)
+                            <br>
+                            <br> Срок действия привилегии: 30 дней
+              </ul>
+            </template>    
+            <!-- Карточка товара -->
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="comm">
+              <div class="card">
+                <img src="assets/img/товары/repairall.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">Починка вещей</h5>
+                  <p class="card-text"><span class="price" data-price="2">$2</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-9">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-9">
+              <p><strong>REPAIRALL:</strong></p>
+              <ul>
+                            <br>Позволяет чинить любые предметы раз в 30 минут
+              </ul>
+            </template>    
+            <!-- Карточка товара -->
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="comm">
+              <div class="card">
+                <img src="assets/img/товары/ender.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">Сундук края</h5>
+                  <p class="card-text"><span class="price" data-price="2">$2</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-10">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-10">
+              <p><strong>ENDER:</strong></p>
+              <ul>
+                            <br>Возможность открывать эндер-сундук с помощью команд /ec или /ender в любой точке мира
+              </ul>
+            </template>    
+            <!-- Карточка товара -->
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="comm">
+              <div class="card">
+                <img src="assets/img/товары/ptime.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">Персональное время</h5>
+                  <p class="card-text"><span class="price" data-price="2">$2</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-11">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-11">
+              <p><strong>PTIME:</strong></p>
+              <ul>
+                            <br>Возможность установить время суток лично для себя  с помощью команд /ptime
+              </ul>
+            </template> 
+            <!-- Карточка товара -->
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="comm">
+              <div class="card">
+                <img src="assets/img/товары/back.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">Back-телепорт</h5>
+                  <p class="card-text"><span class="price" data-price="4">$4</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-12">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-12">
+              <p><strong>BACK:</strong></p>
+              <ul>
+                            <br>Позволяет вернуться на предыдущее место  с помощью команд /back
+              </ul>
+            </template> 
+            <!-- Карточка товара -->
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="comm">
+              <div class="card">
+                <img src="assets/img/товары/functional.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">Функц. блоки</h5>
+                  <p class="card-text"><span class="price" data-price="2">$2</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-13">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-13">
+              <p><strong>FUNCTIONAL:</strong></p>
+              <ul>
+                            <br>Позволяет открыть верстак, наковальню, стол кузнеца и тд. в любой точке мира
+                            <br>Открыть верстак - /workbench
+                            <br>Открыть наковальню - /anvil
+                            <br>Открыть стол картографа - /cartographytable
+                            <br>Открыть камнерез - /stonecutter
+                            <br>Открыть точило - /grindstone
+                            <br>Открыть стол кузнеца - /smithingtable
+              </ul>
+            </template> 
+            <!-- Карточка товара -->
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="comm">
+              <div class="card">
+                <img src="assets/img/товары/keepinv.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">Сохранение инвентаря</h5>
+                  <p class="card-text"><span class="price" data-price="4">$4</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-14">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-14">
+              <p><strong>BACK:</strong></p>
+              <ul>
+                            <br>Позволяет вернуться на предыдущее место  с помощью команд /back
+              </ul>
+            </template> 
+            <!-- Карточка товара -->
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="reg">
+              <div class="card">
+                <img src="assets/img/товары/flags.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">Флаги на приват</h5>
+                  <p class="card-text"><span class="price" data-price="4">$4</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-21">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-21">
+              <p><strong>FLAGS:</strong></p>
+              <ul>
+                            <br>- Отключение опадения листвы (/rg flag <название региона> leaf-decay deny)
+                            <br>- Отключения возможности затоптать грядки (/rg flag <название региона> block-trampling deny)
+                            <br>- Отключение телепорта при употреблении хоруса (/rg flag <название региона> chorus-fruit-teleport deny)
+                            <br>- Отключение использование ендерперлов в регионе (/rg flag <название региона> enderpearl deny)
+                            <br>- Отключение спавна мобов (/rg flag <название региона> mob-spawning deny)
+                            <br>- Отключение спавна определенных мобов (/rg flag deny-spawn <название региона> creeper, spider и.т.д)
+                            <br>- Установка сообщения при входе в регион (/rg flag <название региона> greeting)
+                            <br>- Установка сообщения при выходе из региона (/rg flag <название региона> farewell)
+                            <br>- Отключить распространение огня (/rg flag <название региона> fire-spread deny)
+                            <br>- Отключить огонь от лавы (/rg flag <название региона> lava-fire deny)
+              </ul>
+            </template>            
+            <!-- Карточка товара -->
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="reg">
+              <div class="card">
+                <img src="assets/img/товары/5P500K.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">5 приватов</h5>
+                  <p class="card-text"><span class="price" data-price="1">$1</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-15">
+                  </div>
+                </div>
+              </div>
+            </div>            
+            <!-- Описание для модального окна -->
+            <template id="desc-15">
+              <p><strong>5REGIONS:</strong></p>
+              <ul>
+                            <br>Возможность создавать до 5 регионов по 500 тысяч блоков каждый
+                            <br>(!) не суммируются с доп. покупкой
+              </ul>
+            </template>
+            <!-- Карточка товара -->
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="reg">
+              <div class="card">
+                <img src="assets/img/товары/10P500K.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">10 приватов</h5>
+                  <p class="card-text"><span class="price" data-price="2">$2</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-16">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-16">
+              <p><strong>10REGIONS:</strong></p>
+              <ul>
+                            <br>Возможность создавать до 10 регионов по 500 тысяч блоков каждый
+                            <br>(!) не суммируются с доп. покупкой
+              </ul>
+            </template>
+            <!-- Карточка товара -->
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="reg">
+              <div class="card">
+                <img src="assets/img/товары/20P500K.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">20 приватов</h5>
+                  <p class="card-text"><span class="price" data-price="4">$4</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-17">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-17">
+              <p><strong>20REGIONS:</strong></p>
+              <ul>
+                            <br>Возможность создавать до 20 регионов по 500 тысяч блоков каждый
+                            <br>(!) не суммируются с доп. покупкой
+              </ul>
+            </template>
+            <!-- Карточка товара -->
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="reg">
+              <div class="card">
+                <img src="assets/img/товары/5P1M.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">5 приватов</h5>
+                  <p class="card-text"><span class="price" data-price="3">$3</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-18">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-18">
+              <p><strong>5REGIONS:</strong></p>
+              <ul>
+                            <br>Возможность создавать до 5 регионов по 1 млн. блоков каждый
+                            <br>(!) не суммируются с доп. покупкой
+              </ul>
+            </template>
+            <!-- Карточка товара -->
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="reg">
+              <div class="card">
+                <img src="assets/img/товары/10P1M.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">10 приватов</h5>
+                  <p class="card-text"><span class="price" data-price="4">$4</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-19">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-19">
+              <p><strong>10REGIONS:</strong></p>
+              <ul>
+                            <br>Возможность создавать до 10 регионов по 1 млн. блоков каждый
+                            <br>(!) не суммируются с доп. покупкой
+              </ul>
+            </template>
+            <!-- Карточка товара -->
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="reg">
+              <div class="card">
+                <img src="assets/img/товары/20P1M.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">20 приватов</h5>
+                  <p class="card-text"><span class="price" data-price="5">$5</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-20">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-20">
+              <p><strong>20REGIONS:</strong></p>
+              <ul>
+                            <br>Возможность создавать до 20 регионов по 1 млн. блоков каждый
+                            <br>(!) не суммируются с доп. покупкой
+              </ul>
+            </template>
+            <!-- Карточка товара -->
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="shops">
+              <div class="card">
+                <img src="assets/img/товары/10shops.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">10 магазинов</h5>
+                  <p class="card-text"><span class="price" data-price="1">$1</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-22">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-22">
+              <p><strong>10SHOP:</strong></p>
+              <ul>
+                            <br> Возможность создать 10 сундуков-магазинов
+                            <br>(!) не суммируются с доп. покупкой
+              </ul>
+            </template>
+            <!-- Карточка товара -->            
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="shops">
+              <div class="card">
+                <img src="assets/img/товары/20shops.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">20 магазинов</h5>
+                  <p class="card-text"><span class="price" data-price="2">$2</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-23">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-23">
+              <p><strong>20SHOP:</strong></p>
+              <ul>
+                            <br> Возможность создать 20 сундуков-магазинов
+                            <br>(!) не суммируются с доп. покупкой
+              </ul>
+            </template>
+            <!-- Карточка товара -->            
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="shops">
+              <div class="card">
+                <img src="assets/img/товары/50shops.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">50 магазинов</h5>
+                  <p class="card-text"><span class="price" data-price="3">$3</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-24">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-24">
+              <p><strong>30SHOP:</strong></p>
+              <ul>
+                            <br> Возможность создать 30 сундуков-магазинов
+                            <br>(!) не суммируются с доп. покупкой
+              </ul>
+            </template>
+            <!-- Карточка товара -->            
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="shops">
+              <div class="card">
+                <img src="assets/img/товары/100shops.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">50 магазинов</h5>
+                  <p class="card-text"><span class="price" data-price="5">$5</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-25">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-25">
+              <p><strong>100SHOP:</strong></p>
+              <ul>
+                            <br> Возможность создать 100 сундуков-магазинов
+                            <br>(!) не суммируются с доп. покупкой
+              </ul>
+            </template>
+            <!-- Карточка товара -->            
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="other">
+              <div class="card">
+                <img src="assets/img/товары/expbooster30m.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">Бустер 30 мин</h5>
+                  <p class="card-text"><span class="price" data-price="1">$1</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-26">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-26">
+              <p><strong>BOOSTER:</strong></p>
+              <ul>
+                            <br>Активируйте серверный бустер и ускорьте прогресс на +10%! Все игроки на сервере получат дополнительный бонус к Прогрессу на 30 минут   
+              </ul>
+            </template>
+            <!-- Карточка товара -->            
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="other">
+              <div class="card">
+                <img src="assets/img/товары/expbooster60m.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">Бустер 1 час</h5>
+                  <p class="card-text"><span class="price" data-price="2">$2</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-27">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-27">
+              <p><strong>BOOSTER:</strong></p>
+              <ul>
+                            <br>Активируйте серверный бустер и ускорьте прогресс на +10%! Все игроки на сервере получат дополнительный бонус к Прогрессу на 60 минут   
+
+              </ul>
+            </template>
+            <!-- Карточка товара -->            
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="other">
+              <div class="card">
+                <img src="assets/img/товары/moneyboost30m.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">Бустер 30 мин</h5>
+                  <p class="card-text"><span class="price" data-price="1">$1</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-28">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-28">
+              <p><strong>BOOSTER:</strong></p>
+              <ul>
+                            <br>Активируйте серверный бустер и получайте на 10% больше денег за уровни! Все игроки на сервере смогут увеличить свой заработок на 30 минут
+            </template>
+            <!-- Карточка товара -->            
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="other">
+              <div class="card">
+                <img src="assets/img/товары/moneyboost60m.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">Бустер 1 час</h5>
+                  <p class="card-text"><span class="price" data-price="2">$2</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-29">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-29">
+              <p><strong>BOOSTER:</strong></p>
+              <ul>
+                            <br>Активируйте серверный бустер и получайте на 10% больше денег за уровни! Все игроки на сервере смогут увеличить свой заработок на 60 минут
+              </ul>
+            </template>
+            <!-- Карточка товара -->            
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="other">
+              <div class="card">
+                <img src="assets/img/товары//5homes.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">5 точек дома</h5>
+                  <p class="card-text"><span class="price" data-price="1">$1</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-30">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-30">
+              <p><strong>HOMES:</strong></p>
+              <ul>
+                <br>Возмость установить 5 точек дома
+                <br>(!) не суммируются с доп. покупкой
+              </ul>
+            </template>
+            <!-- Карточка товара -->            
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="other">
+              <div class="card">
+                <img src="assets/img/товары/20homes.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">20 точек дома</h5>
+                  <p class="card-text"><span class="price" data-price="2">$2</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-31">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-31">
+              <p><strong>HOMES:</strong></p>
+              <ul>
+                <br>Возмость установить 20 точек дома
+                <br>(!) не суммируются с доп. покупкой
+              </ul>
+            </template>
+            <!-- Карточка товара -->            
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="other">
+              <div class="card">
+                <img src="assets/img/товары/50homes.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">50 точек дома</h5>
+                  <p class="card-text"><span class="price" data-price="4">$4</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-32">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-32">
+              <p><strong>HOMES:</strong></p>
+              <ul>
+                <br>Возмость установить 50 точек дома
+                <br>(!) не суммируются с доп. покупкой
+              </ul>
+            </template>
+            <!-- Карточка товара -->            
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="other">
+              <div class="card">
+                <img src="assets/img/товары/100homes.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">100 точек дома</h5>
+                  <p class="card-text"><span class="price" data-price="7">$7</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-33">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-33">
+              <p><strong>HOMES:</strong></p>
+              <ul>
+                <br>Возмость установить 100 точек дома
+                <br>(!) не суммируются с доп. покупкой
+              </ul>
+            </template>
+            <!-- Карточка товара -->            
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="other">
+              <div class="card">
+                <img src="assets/img/товары/PremiumProf.svg" class="card-img-top" alt="Товар">
+                <div class="card-body">
+                  <h5 class="card-title">Premium профессии</h5>
+                  <p class="card-text"><span class="price" data-price="5">$5</span></p>
+                  <div class="d-flex gap-2 mt-2 align-items-center">
+                    <button class="btn btn-primary w-90 add-to-cart">Добавить в корзину</button>
+                    <img src="assets/img/info norm.svg" 
+                        class="img-thumbnail w-10 p-1 description-icon" alt="Описание"
+                        data-bs-toggle="modal" data-bs-target="#descriptionModal"
+                        data-desc="desc-34">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Описание для модального окна -->
+            <template id="desc-34">
+              <p><strong>PREMIUM:</strong></p>
+              <ul>
+                            <br>После покупки откроется возможность работать на премиальных профессиях.
+              </ul>
+            </template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+            <!-- Плавающая кнопка корзины -->
+            <button class="btn btn-primary floating-cart-btn" data-bs-toggle="modal" data-bs-target="#cartModal">
+              🛒 Корзина (<span id="cartCount">0</span>)
+            </button>
+        
+        <!-- Модальное окно описания -->
+            <div class="modal fade" id="descriptionModal" tabindex="-1" aria-labelledby="descriptionModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="descriptionModalLabel">Описание товара</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                  </div>
+                  <div class="modal-body" id="modal-description-content">
+                    <!-- Заполнится при клике -->
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+        <!-- Модальное окно корзины -->
+        <div class="modal fade" id="cartModal" tabindex="-1">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Корзина</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <ul class="list-group" id="cartItems"></ul>
+                <hr>
+                <h5 class="text-end">Итого: <span id="cartTotal">$0</span></h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="descriptionModal" tabindex="-1" aria-labelledby="descriptionModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="descriptionModalLabel">Описание товара</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+              </div>
+              <div class="modal-body" id="modal-description-content">
+                <!-- Контент будет вставлен из template -->
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <script>
+          let rates = { USD: 1, EUR: 0.9, UAH: 41, RUB: 80 }; // по умолчанию
+          let currentCurrency = 'USD';
+          const cart = [];
+        
+          async function fetchRates() {
+            try {
+              const res = await fetch('https://api.exchangerate.host/latest?base=USD&symbols=EUR,UAH');
+              const data = await res.json();
+              rates = { USD: 1, EUR: data.rates.EUR, UAH: data.rates.UAH };
+              updatePrices();
+              updateCart();
+            } catch (err) {
+              console.warn('Не удалось загрузить курсы валют, используется дефолт.');
+            }
+          }
+        
+          document.querySelectorAll('.add-to-cart').forEach((btn, idx) => {
+            btn.addEventListener('click', () => {
+              const card = btn.closest('.card');
+              const title = card.querySelector('.card-title').textContent;
+              const price = parseFloat(card.querySelector('.price').dataset.price);
+              const item = cart.find(p => p.title === title);
+              if (item) item.qty++;
+              else cart.push({ title, price, qty: 1 });
+              updateCart();
+            });
+          });
+        
+          document.getElementById('currencySelect').addEventListener('change', e => {
+            currentCurrency = e.target.value;
+            updatePrices();
+            updateCart();
+          });
+        
+          function updatePrices() {
+            document.querySelectorAll('.price').forEach(el => {
+              const base = parseFloat(el.dataset.price);
+              el.textContent = formatPrice(base);
+            });
+          }
+        
+          function formatPrice(price) {
+            return (price * rates[currentCurrency]).toFixed(2) + ' ' + currentCurrency;
+          }
+        
+          function updateCart() {
+            const list = document.getElementById('cartItems');
+            list.innerHTML = '';
+            let total = 0;
+            cart.forEach((item, i) => {
+              const li = document.createElement('li');
+              li.className = 'cart-item d-flex justify-content-between align-items-center';
+              total += item.price * item.qty;
+              li.innerHTML = `
+                <div>
+                  <strong>${item.title}</strong><br>
+                  <small>Цена: ${formatPrice(item.price)}</small><br>
+                  <input type="number" value="${item.qty}" min="1" class="form-control form-control-sm w-50 d-inline qty-input" data-index="${i}">
+                </div>
+                <button class="btn btn-sm btn-danger" data-index="${i}">Удалить</button>
+              `;
+              list.appendChild(li);
+            });
+            document.getElementById('cartTotal').textContent = formatPrice(total);
+            document.getElementById('cartCount').textContent = cart.reduce((sum, item) => sum + item.qty, 0);
+            list.querySelectorAll('.btn-danger').forEach(btn => {
+              btn.onclick = () => {
+                cart.splice(btn.dataset.index, 1);
+                updateCart();
+              };
+            });
+            list.querySelectorAll('.qty-input').forEach(input => {
+              input.onchange = () => {
+                const i = input.dataset.index;
+                cart[i].qty = parseInt(input.value);
+                updateCart();
+              };
+            });
+          }
+        
+          document.getElementById('categoryFilter').addEventListener('change', e => {
+            const cat = e.target.value;
+            document.querySelectorAll('[data-category]').forEach(el => {
+              el.style.display = (cat === 'all' || el.dataset.category === cat) ? '' : 'none';
+            });
+          });
+        
+          const descriptionModal = document.getElementById('descriptionModal');
+          descriptionModal.addEventListener('show.bs.modal', e => {
+            const btn = e.relatedTarget;
+            const desc = btn.getAttribute('data-desc');
+            document.getElementById('descriptionContent').textContent = desc;
+          });
+        
+          fetchRates();
+        </script>
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.description-icon').forEach(icon => {
+              icon.addEventListener('click', () => {
+                const descId = icon.getAttribute('data-desc');
+                const template = document.getElementById(descId);
+                const modalContent = document.getElementById('modal-description-content');
+
+                if (template && template.content) {
+                  modalContent.innerHTML = '';
+                  modalContent.appendChild(template.content.cloneNode(true));
+                } else {
+                  modalContent.innerHTML = '<p>Описание не найдено.</p>';
+                }
+              });
+            });
+          });
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+      <script src="assets/js/main.js"> </script>
+
+      <footer class="footer mt-5 pt-4 pb-3">
+        <div class="container-fluid">
+          <div class="d-flex flex-wrap justify-content-center gap-3 text-center">
+              <a href="index.html" class="btn footer-btn px-4">Главная</a>
+              <a href="https://discord.gg/hvHxbAk6jRR" class="btn footer-btn px-4">Discord</a>
+              <a href="wiki.html" class="btn footer-btn px-4">Вики</a>
+              <a href="wiki.html#pk" class="btn footer-btn px-4">Политика конфиденциальности</a>
+              <a href="wiki.html#ps" class="btn footer-btn px-4">Пользовательское соглашение</a>
+          </div>
+        </div>
+          <div class="text-center mt-4">
+            <p class="mb-0 small">Not an official Minecraft product. We are in no way affiliated with or endorsed by Mojang Synergies AB, Microsoft Corporation or other rightsholders.</p>
+          </div>
+        </div>
+      </footer>
+    </body>
+</html>

@@ -257,3 +257,55 @@ a:hover {
   color: var(--accent-color);
   text-decoration: none;
 }
+
+.avatar-block {
+  padding: 2rem;
+}
+
+.avatar-wrapper {
+  display: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar-wrapper img {
+  width: 1rem;
+  height: auto;
+}
+
+
+.card-body-commad-0{ 
+    background-color:#F4FDFF ;
+    color: var(--background-color);
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+.card-title-command-0{
+    color: var(--background-color);
+    font-weight: 600;
+}
+
+.card-body-commad-1{ 
+    background-color:#034698 ;
+    color: var(--background-color);
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+.card-title-command-1{
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.card-body-commad-2{ 
+    background-color:#ab26ff ;
+    color: var(--background-color);
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+.card-title-command-2{
+    color: var(--text-color);
+    font-weight: 600;
+}

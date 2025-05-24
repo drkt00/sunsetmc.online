@@ -296,3 +296,14 @@ body{
 .discord-button:hover {
   background-color: #5b6eae;
 }
+
+a {
+  color: var(--accent-color); 
+  text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-color);
+  text-decoration: none;
+}

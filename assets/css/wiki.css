@@ -312,3 +312,8 @@ a:hover {
     color: var(--text-color);
     font-weight: 600;
 }
+
+.card-discord{ 
+  text-decoration: none;
+  color: var(--background-color);
+}

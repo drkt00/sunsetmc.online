@@ -4,9 +4,11 @@
     --text-color:#FFE4D0;
     --accent-color:#F67011;
     --contrast-color:#ffffff;
-    --card-1:#F4FDFF;
-    --card-2:#034698;
-    --card-3:#AB26FF;
+    --card-0:#F4FDFF;
+    --card-1:#034698;
+    --card-2:#f80078;
+    --card-3:#43007c;
+    --card-4:#000000;
 }
 
 
@@ -278,7 +280,7 @@ a:hover {
 
 
 .card-body-commad-0{ 
-    background-color:var(--card-1) ;
+    background-color:var(--card-0) ;
     color: var(--background-color);
     overflow: hidden;
     border-radius: 1rem;
@@ -290,7 +292,7 @@ a:hover {
 }
 
 .card-body-commad-1{ 
-    background-color:var(--card-2) ;
+    background-color:var(--card-1) ;
     color: var(--background-color);
     overflow: hidden;
     border-radius: 1rem;
@@ -302,13 +304,37 @@ a:hover {
 }
 
 .card-body-commad-2{ 
-    background-color:var(--card-3) ;
+    background-color:var(--card-2) ;
     color: var(--background-color);
     overflow: hidden;
     border-radius: 1rem;
 }
 
 .card-title-command-2{
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.card-body-commad-3{ 
+    background-color:var(--card-3) ;
+    color: var(--background-color);
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+.card-title-command-3{
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.card-body-commad-4{ 
+    background-color:var(--card-4) ;
+    color: var(--background-color);
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+.card-title-command-4{
     color: var(--text-color);
     font-weight: 600;
 }
